@@ -1,0 +1,97 @@
+{
+  "build": {
+    "command": "rollup",
+    "extraArgs": [
+      "-c"
+    ],
+    "isCommand": true,
+    "path": "translifyapp/js"
+  },
+  "djangoMakeMigrations": {
+    "command": "python3 manage.py makemigrations",
+    "isCommand": true
+  },
+  "djangoMigrate": {
+    "command": "python3 manage.py migrate",
+    "isCommand": true
+  },
+  "djangoRun": {
+    "command": [
+      {
+        "command": "migrate",
+        "type": "django"
+      },
+      {
+        "command": "generate_public_state",
+        "type": "django"
+      },
+      {
+        "command": "runserver",
+        "type": "django"
+      }
+    ],
+    "isCommand": true
+  },
+  "installPythonRequirements": {
+    "command": "sudo pip3 install --upgrade -r requirements.txt",
+    "isCommand": true
+  },
+  "project": {
+    "author": "Murtaza Alexandru",
+    "description": "Photo to document converter",
+    "name": "translify"
+  },
+  "run": {
+    "command": [
+      {
+        "background": true,
+        "command": "build",
+        "daemon": true,
+        "extraArgs": [
+          "--watch"
+        ],
+        "type": "stem"
+      },
+      {
+        "background": true,
+        "command": "djangoRun",
+        "type": "stem"
+      }
+    ],
+    "isCommand": true
+  },
+  "setup": {
+    "dev": {
+      "command": [
+        "installPythonRequirements",
+        "djangoMakeMigrations",
+        "djangoMigrate",
+        "build"
+      ],
+      "dependencies": [
+        "redis-server",
+        "nodejs",
+        "postgresql"
+      ],
+      "npmDependencies": [
+        "babel-cli",
+        "rollup"
+      ]
+    },
+    "production": {
+      "command": [
+        "installPythonRequirements"
+      ],
+      "dependencies": [
+        "redis-server",
+        "nodejs",
+        "postgresql"
+      ],
+      "npmDependencies": []
+    }
+  },
+  "sourceControl": {
+    "link": "https://github.com/links234/translify",
+    "type": "git"
+  }
+}
