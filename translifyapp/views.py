@@ -9,7 +9,6 @@ from .models import TextTranslation
 import os
 import subprocess
 import mimetypes
-from .translate import getTranslatedLines
 from ANPR.code.compute_roi import show_compute_roi
 
 
