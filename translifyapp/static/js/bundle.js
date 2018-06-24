@@ -19000,185 +19000,82 @@ var Bundle = (function (exports) {
       return StaticCodeHighlighter;
   }(CodeEditor)) || _class4$1);
 
-  var _class$F, _descriptor$h, _descriptor2$f, _descriptor3$f, _descriptor4$d, _descriptor5$b, _descriptor6$9, _descriptor7$7, _dec$k, _class3$c;
-
-  function _initDefineProp$i(target, property, descriptor, context) {
-      if (!descriptor) return;
-      Object.defineProperty(target, property, {
-          enumerable: descriptor.enumerable,
-          configurable: descriptor.configurable,
-          writable: descriptor.writable,
-          value: descriptor.initializer ? descriptor.initializer.call(context) : void 0
-      });
-  }
-
-  function _applyDecoratedDescriptor$i(target, property, decorators, descriptor, context) {
-      var desc = {};
-      Object['ke' + 'ys'](descriptor).forEach(function (key) {
-          desc[key] = descriptor[key];
-      });
-      desc.enumerable = !!desc.enumerable;
-      desc.configurable = !!desc.configurable;
-
-      if ('value' in desc || desc.initializer) {
-          desc.writable = true;
+  var StorageLimits = function () {
+      function StorageLimits() {
+          classCallCheck(this, StorageLimits);
       }
 
-      desc = decorators.slice().reverse().reduce(function (desc, decorator) {
-          return decorator(target, property, desc) || desc;
-      }, desc);
-
-      if (context && desc.initializer !== void 0) {
-          desc.value = desc.initializer ? desc.initializer.call(context) : void 0;
-          desc.initializer = undefined;
-      }
-
-      if (desc.initializer === void 0) {
-          Object['define' + 'Property'](target, property, desc);
-          desc = null;
-      }
-
-      return desc;
-  }
-
-  var TextTranslationEntryStyle = (_class$F = function (_StyleSheet) {
-      inherits(TextTranslationEntryStyle, _StyleSheet);
-
-      function TextTranslationEntryStyle() {
-          var _ref;
-
-          var _temp, _this, _ret;
-
-          classCallCheck(this, TextTranslationEntryStyle);
-
-          for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-              args[_key] = arguments[_key];
-          }
-
-          return _ret = (_temp = (_this = possibleConstructorReturn(this, (_ref = TextTranslationEntryStyle.__proto__ || Object.getPrototypeOf(TextTranslationEntryStyle)).call.apply(_ref, [this].concat(args))), _this), _initDefineProp$i(_this, "panel", _descriptor$h, _this), _initDefineProp$i(_this, "title", _descriptor2$f, _this), _initDefineProp$i(_this, "contentContainer", _descriptor3$f, _this), _initDefineProp$i(_this, "imageContainer", _descriptor4$d, _this), _initDefineProp$i(_this, "image", _descriptor5$b, _this), _initDefineProp$i(_this, "textContainer", _descriptor6$9, _this), _initDefineProp$i(_this, "text", _descriptor7$7, _this), _temp), possibleConstructorReturn(_this, _ret);
-      }
-
-      return TextTranslationEntryStyle;
-  }(StyleSheet), (_descriptor$h = _applyDecoratedDescriptor$i(_class$F.prototype, "panel", [styleRule], {
-      enumerable: true,
-      initializer: function initializer() {
-          return {
-              background: "white",
-              width: "80vw",
-              maxHeight: "400px",
-              display: "flex",
-              flexDirection: "column",
-              padding: "10px 40px",
-              boxShadow: "1px 1px 6px rgba(0,0,0,.5)",
-              margin: "20px",
-              borderRadius: "6px"
-          };
-      }
-  }), _descriptor2$f = _applyDecoratedDescriptor$i(_class$F.prototype, "title", [styleRule], {
-      enumerable: true,
-      initializer: function initializer() {
-          return {
-              fontSize: "2em",
-              textAlign: "center"
-          };
-      }
-  }), _descriptor3$f = _applyDecoratedDescriptor$i(_class$F.prototype, "contentContainer", [styleRule], {
-      enumerable: true,
-      initializer: function initializer() {
-          return {
-              display: "block",
-              padding: "20px 0",
-              flexDirection: "row",
-              maxHeight: "360px",
-              flex: "1"
-          };
-      }
-  }), _descriptor4$d = _applyDecoratedDescriptor$i(_class$F.prototype, "imageContainer", [styleRule], {
-      enumerable: true,
-      initializer: function initializer() {
-          return {
-              textAlign: "center",
-              width: "50%",
-              height: "100%",
-              display: "inline-block"
-          };
-      }
-  }), _descriptor5$b = _applyDecoratedDescriptor$i(_class$F.prototype, "image", [styleRule], {
-      enumerable: true,
-      initializer: function initializer() {
-          return {
-              borderRadius: "4px",
-              maxHeight: "325px",
-              maxWidth: "100%"
-          };
-      }
-  }), _descriptor6$9 = _applyDecoratedDescriptor$i(_class$F.prototype, "textContainer", [styleRule], {
-      enumerable: true,
-      initializer: function initializer() {
-          return {
-              overflow: "auto",
-              width: "50%",
-              maxHeight: "100%",
-              verticalAlign: "top",
-              display: "inline-block",
-              paddingLeft: "15px"
-          };
-      }
-  }), _descriptor7$7 = _applyDecoratedDescriptor$i(_class$F.prototype, "text", [styleRule], {
-      enumerable: true,
-      initializer: function initializer() {
-          return {
-              color: "rgba(0,0,0,.8)",
-              textAlign: "justify"
-          };
-      }
-  })), _class$F);
-
-  var TextTranslationEntry = (_dec$k = registerStyle(TextTranslationEntryStyle), _dec$k(_class3$c = function (_Panel) {
-      inherits(TextTranslationEntry, _Panel);
-
-      function TextTranslationEntry() {
-          classCallCheck(this, TextTranslationEntry);
-          return possibleConstructorReturn(this, (TextTranslationEntry.__proto__ || Object.getPrototypeOf(TextTranslationEntry)).apply(this, arguments));
-      }
-
-      createClass(TextTranslationEntry, [{
-          key: "extraNodeAttributes",
-          value: function extraNodeAttributes(attr) {
-              get(TextTranslationEntry.prototype.__proto__ || Object.getPrototypeOf(TextTranslationEntry.prototype), "extraNodeAttributes", this).call(this, attr);
-              attr.addClass(this.styleSheet.panel);
+      createClass(StorageLimits, null, [{
+          key: "userFileMaxCount",
+          value: function userFileMaxCount() {
+              if (USER.isSuperUser) {
+                  return -1;
+              }
+              return 512;
           }
       }, {
-          key: "render",
-          value: function render() {
-              var styleSheet = this.styleSheet;
-
-              return [UI.createElement(
-                  "div",
-                  { className: styleSheet.title },
-                  this.options.translation.title
-              ), UI.createElement(
-                  "div",
-                  { className: styleSheet.contentContainer },
-                  UI.createElement(
-                      "div",
-                      { className: styleSheet.imageContainer },
-                      UI.createElement(Image, { className: styleSheet.image, src: this.options.translation.photoUrl })
-                  ),
-                  UI.createElement(
-                      "div",
-                      { className: styleSheet.textContainer },
-                      UI.createElement(
-                          "div",
-                          { className: styleSheet.text },
-                          this.options.translation.content
-                      )
-                  )
-              )];
+          key: "userUploadMaxCount",
+          value: function userUploadMaxCount() {
+              if (USER.isSuperUser) {
+                  return -1;
+              }
+              return 16;
+          }
+      }, {
+          key: "userFileMaxSize",
+          value: function userFileMaxSize() {
+              if (USER.isSuperUser) {
+                  return -1;
+              }
+              return 128 * 1024 * 1024;
+          }
+      }, {
+          key: "userTotalMaxSize",
+          value: function userTotalMaxSize() {
+              if (USER.isSuperUser) {
+                  return 1024 * 1024 * 1024;
+              }
+              return 256 * 1024 * 1024;
+          }
+      }, {
+          key: "validateFileMaxCount",
+          value: function validateFileMaxCount(storageMeta, fileCount) {
+              var maxFileCount = StorageLimits.userFileMaxCount();
+              if (maxFileCount == -1) {
+                  return true;
+              }
+              return storageMeta.getFileCount() + fileCount <= maxFileCount;
+          }
+      }, {
+          key: "validateUploadMaxCount",
+          value: function validateUploadMaxCount(fileCount) {
+              var uploadMaxCount = StorageLimits.userUploadMaxCount();
+              if (uploadMaxCount == -1) {
+                  return true;
+              }
+              return fileCount <= uploadMaxCount;
+          }
+      }, {
+          key: "validateFileMaxSize",
+          value: function validateFileMaxSize(fileSize) {
+              var fileMaxSize = StorageLimits.userFileMaxSize();
+              if (fileMaxSize == -1) {
+                  return true;
+              }
+              return fileSize <= fileMaxSize;
+          }
+      }, {
+          key: "validateTotalMaxSize",
+          value: function validateTotalMaxSize(storageMeta, totalSize) {
+              var totalMaxSize = StorageLimits.userTotalMaxSize();
+              if (totalMaxSize == -1) {
+                  return true;
+              }
+              return storageMeta.getUsedSpace() + totalSize <= totalMaxSize;
           }
       }]);
-      return TextTranslationEntry;
-  }(Panel)) || _class3$c);
+      return StorageLimits;
+  }();
 
   var State = function (_Dispatchable) {
       inherits(State, _Dispatchable);
@@ -19804,54 +19701,263 @@ var Bundle = (function (exports) {
 
   SingletonStore.prototype.addEventListener = StoreObject.prototype.addEventListener;
 
-  var TextTranslation = function (_StoreObject) {
-    inherits(TextTranslation, _StoreObject);
+  var StorageMeta = function () {
+      function StorageMeta(usedSpace, fileCount) {
+          classCallCheck(this, StorageMeta);
 
-    function TextTranslation() {
-      classCallCheck(this, TextTranslation);
-      return possibleConstructorReturn(this, (TextTranslation.__proto__ || Object.getPrototypeOf(TextTranslation)).apply(this, arguments));
-    }
-
-    return TextTranslation;
-  }(StoreObject);
-
-  var TextTranslationStore = new GenericObjectStore("texttranslation", TextTranslation);
-
-  window.pulamea = TextTranslationStore;
-
-  var TextTranslationList = function (_UI$Element) {
-      inherits(TextTranslationList, _UI$Element);
-
-      function TextTranslationList() {
-          classCallCheck(this, TextTranslationList);
-          return possibleConstructorReturn(this, (TextTranslationList.__proto__ || Object.getPrototypeOf(TextTranslationList)).apply(this, arguments));
+          this.usedSpace = usedSpace;
+          this.fileCount = fileCount;
       }
 
-      createClass(TextTranslationList, [{
+      createClass(StorageMeta, [{
+          key: "getUsedSpace",
+          value: function getUsedSpace() {
+              return this.usedSpace;
+          }
+      }, {
+          key: "getFileCount",
+          value: function getFileCount() {
+              return this.fileCount;
+          }
+      }]);
+      return StorageMeta;
+  }();
+
+  var PublicStorageFile = function (_StoreObject) {
+      inherits(PublicStorageFile, _StoreObject);
+
+      function PublicStorageFile() {
+          classCallCheck(this, PublicStorageFile);
+          return possibleConstructorReturn(this, (PublicStorageFile.__proto__ || Object.getPrototypeOf(PublicStorageFile)).apply(this, arguments));
+      }
+
+      createClass(PublicStorageFile, [{
+          key: "getStorageServer",
+          value: function getStorageServer() {
+              return StorageServerStore.get(this.storageServerId);
+          }
+      }, {
+          key: "getPublicURL",
+          value: function getPublicURL() {
+              var storageServer = this.getStorageServer();
+              return storageServer.domain + storageServer.urlBasePath + this.serverPath;
+          }
+      }]);
+      return PublicStorageFile;
+  }(StoreObject);
+
+  var PublicStorageFileStoreClass = function (_GenericObjectStore) {
+      inherits(PublicStorageFileStoreClass, _GenericObjectStore);
+
+      function PublicStorageFileStoreClass() {
+          classCallCheck(this, PublicStorageFileStoreClass);
+          return possibleConstructorReturn(this, (PublicStorageFileStoreClass.__proto__ || Object.getPrototypeOf(PublicStorageFileStoreClass)).apply(this, arguments));
+      }
+
+      createClass(PublicStorageFileStoreClass, [{
+          key: "getStorageMeta",
+          value: function getStorageMeta() {
+              var usedSpace = 0;
+              var files = this.all();
+              var _iteratorNormalCompletion = true;
+              var _didIteratorError = false;
+              var _iteratorError = undefined;
+
+              try {
+                  for (var _iterator = files[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+                      var file = _step.value;
+
+                      usedSpace += file.size;
+                  }
+              } catch (err) {
+                  _didIteratorError = true;
+                  _iteratorError = err;
+              } finally {
+                  try {
+                      if (!_iteratorNormalCompletion && _iterator.return) {
+                          _iterator.return();
+                      }
+                  } finally {
+                      if (_didIteratorError) {
+                          throw _iteratorError;
+                      }
+                  }
+              }
+
+              return new StorageMeta(usedSpace, files.length);
+          }
+      }, {
+          key: "getAllIds",
+          value: function getAllIds() {
+              var files = this.all();
+              var ids = [];
+              var _iteratorNormalCompletion2 = true;
+              var _didIteratorError2 = false;
+              var _iteratorError2 = undefined;
+
+              try {
+                  for (var _iterator2 = files[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
+                      var file = _step2.value;
+
+                      ids.push(file.id);
+                  }
+              } catch (err) {
+                  _didIteratorError2 = true;
+                  _iteratorError2 = err;
+              } finally {
+                  try {
+                      if (!_iteratorNormalCompletion2 && _iterator2.return) {
+                          _iterator2.return();
+                      }
+                  } finally {
+                      if (_didIteratorError2) {
+                          throw _iteratorError2;
+                      }
+                  }
+              }
+
+              return ids;
+          }
+      }]);
+      return PublicStorageFileStoreClass;
+  }(GenericObjectStore);
+
+  var PublicStorageFileStore = new PublicStorageFileStoreClass("PublicStorageFile", PublicStorageFile);
+
+  var StorageServer = function (_StoreObject2) {
+      inherits(StorageServer, _StoreObject2);
+
+      function StorageServer() {
+          classCallCheck(this, StorageServer);
+          return possibleConstructorReturn(this, (StorageServer.__proto__ || Object.getPrototypeOf(StorageServer)).apply(this, arguments));
+      }
+
+      return StorageServer;
+  }(StoreObject);
+
+  var StorageServerStore = new GenericObjectStore("StorageServer", StorageServer);
+
+  var UploadFilesCuJapca = function (_UI$Element) {
+      inherits(UploadFilesCuJapca, _UI$Element);
+
+      function UploadFilesCuJapca() {
+          classCallCheck(this, UploadFilesCuJapca);
+          return possibleConstructorReturn(this, (UploadFilesCuJapca.__proto__ || Object.getPrototypeOf(UploadFilesCuJapca)).apply(this, arguments));
+      }
+
+      createClass(UploadFilesCuJapca, [{
           key: "render",
           value: function render() {
-              return TextTranslationStore.all().map(function (x) {
-                  return UI.createElement(TextTranslationEntry, { translation: x });
-              });
+              return [UI.createElement(
+                  Button,
+                  { ref: "button", label: "Upload", style: {
+                          position: "relative",
+                          borderRadius: "21px",
+                          color: "white",
+                          fontSize: 23,
+                          border: "none",
+                          background: "#5824AA"
+                      } },
+                  UI.createElement(FileInput, {
+                      style: {
+                          position: "absolute",
+                          height: "100%",
+                          width: "100%",
+                          top: 0,
+                          cursor: "pointer",
+                          left: 0,
+                          opacity: 0
+                      },
+                      className: "pull-left", ref: "fileInput", multipleFiles: true })
+              )];
           }
       }, {
           key: "onMount",
           value: function onMount() {
               var _this2 = this;
 
-              get(TextTranslationList.prototype.__proto__ || Object.getPrototypeOf(TextTranslationList.prototype), "onMount", this).call(this);
-              TextTranslationStore.addCreateListener(function () {
-                  return _this2.redraw();
+              get(UploadFilesCuJapca.prototype.__proto__ || Object.getPrototypeOf(UploadFilesCuJapca.prototype), "onMount", this).call(this);
+
+              this.fileInput.addChangeListener(function () {
+                  if (!(window.File && window.FileReader && window.FileList && window.Blob)) {
+                      console.error('The File APIs are not fully supported in this browser.');
+                      return false;
+                  }
+                  _this2.upload();
               });
-              Ajax.postJSON("/user_state/", {});
+          }
+      }, {
+          key: "upload",
+          value: function upload() {
+              var _this3 = this;
+
+              var files = this.fileInput.getFiles();
+
+              if (files.length == 0) {
+                  this.dispatch("error", {});
+                  return;
+              } else {
+                  var reader = new FileReader();
+
+                  reader.onload = function (e) {
+                      _this3.dispatch("sourceUpdate", e.target.result);
+                  };
+
+                  reader.readAsDataURL(files[0]);
+              }
+
+              if (!StorageLimits.validateUploadMaxCount(files.length)) {
+                  this.dispatch("error", {});
+                  return;
+              }
+
+              var storageMeta = PublicStorageFileStore.getStorageMeta();
+
+              if (!StorageLimits.validateFileMaxCount(storageMeta, files.length)) {
+                  this.dispatch("error", {});
+                  return;
+              }
+
+              var totalSize = 0;
+              var formData = new FormData();
+
+              for (var index = 0; index < files.length; ++index) {
+                  if (!StorageLimits.validateFileMaxSize(files[index].size)) {
+                      this.dispatch("error", {});
+                      return;
+                  }
+                  formData.append(files[index].name, files[index]);
+                  totalSize += files[index].size;
+              }
+
+              if (!StorageLimits.validateTotalMaxSize(storageMeta, totalSize)) {
+                  this.dispatch("error", {});
+                  return;
+              }
+
+              formData.append("title", "nume_fisier");
+
+              var fileUploadRequest = Ajax.post("/recognize/", {
+                  dataType: "json",
+                  data: formData,
+                  cache: false,
+                  processData: false,
+                  contentType: false
+              });
+
+              fileUploadRequest.then(function (data) {
+                  return _this3.dispatch("received", data);
+              }, function (error) {
+                  _this3.dispatch("error", {});
+              });
           }
       }]);
-      return TextTranslationList;
+      return UploadFilesCuJapca;
   }(UI.Element);
 
-  var _class$G, _descriptor$i, _descriptor2$g, _descriptor3$g, _class3$d, _descriptor4$e, _class5$4, _descriptor5$c, _descriptor6$a, _descriptor7$8, _dec$l, _class7$4, _dec2$7, _class8, _dec3$2, _class9$1;
+  var _class$F, _descriptor$h, _descriptor2$f, _descriptor3$f, _class3$c, _descriptor4$d, _descriptor5$b, _descriptor6$9, _descriptor7$7, _descriptor8$5, _descriptor9$5, _descriptor10$4, _descriptor11$4, _dec$k, _class5$4, _dec2$7, _class6$1, _class7$4, _descriptor12$4, _descriptor13$4, _dec3$2, _class9$1;
 
-  function _initDefineProp$j(target, property, descriptor, context) {
+  function _initDefineProp$i(target, property, descriptor, context) {
       if (!descriptor) return;
       Object.defineProperty(target, property, {
           enumerable: descriptor.enumerable,
@@ -19861,7 +19967,7 @@ var Bundle = (function (exports) {
       });
   }
 
-  function _applyDecoratedDescriptor$j(target, property, decorators, descriptor, context) {
+  function _applyDecoratedDescriptor$i(target, property, decorators, descriptor, context) {
       var desc = {};
       Object['ke' + 'ys'](descriptor).forEach(function (key) {
           desc[key] = descriptor[key];
@@ -19890,7 +19996,7 @@ var Bundle = (function (exports) {
       return desc;
   }
 
-  var CardStyle = (_class$G = function (_StyleSheet) {
+  var CardStyle = (_class$F = function (_StyleSheet) {
       inherits(CardStyle, _StyleSheet);
 
       function CardStyle() {
@@ -19904,22 +20010,26 @@ var Bundle = (function (exports) {
               args[_key] = arguments[_key];
           }
 
-          return _ret = (_temp = (_this = possibleConstructorReturn(this, (_ref = CardStyle.__proto__ || Object.getPrototypeOf(CardStyle)).call.apply(_ref, [this].concat(args))), _this), _initDefineProp$j(_this, "container", _descriptor$i, _this), _initDefineProp$j(_this, "header", _descriptor2$g, _this), _initDefineProp$j(_this, "body", _descriptor3$g, _this), _temp), possibleConstructorReturn(_this, _ret);
+          return _ret = (_temp = (_this = possibleConstructorReturn(this, (_ref = CardStyle.__proto__ || Object.getPrototypeOf(CardStyle)).call.apply(_ref, [this].concat(args))), _this), _initDefineProp$i(_this, "container", _descriptor$h, _this), _initDefineProp$i(_this, "header", _descriptor2$f, _this), _initDefineProp$i(_this, "body", _descriptor3$f, _this), _temp), possibleConstructorReturn(_this, _ret);
       }
 
       return CardStyle;
-  }(StyleSheet), (_descriptor$i = _applyDecoratedDescriptor$j(_class$G.prototype, "container", [styleRule], {
+  }(StyleSheet), (_descriptor$h = _applyDecoratedDescriptor$i(_class$F.prototype, "container", [styleRule], {
       enumerable: true,
       initializer: function initializer() {
           return {
-              width: "450px",
+              width: "80vw",
+              marginTop: "-10px",
+              height: "calc(100vh - 140px)",
               maxHeight: "100%",
               maxWidth: "100%",
               backgroundColor: "#fff",
-              boxShadow: "#a05100 0px 0px 10px"
+              boxShadow: "rgba(0,0,0,.23) 0px 0px 10px",
+              borderRadius: "20px",
+              textAlign: "center"
           };
       }
-  }), _descriptor2$g = _applyDecoratedDescriptor$j(_class$G.prototype, "header", [styleRule], {
+  }), _descriptor2$f = _applyDecoratedDescriptor$i(_class$F.prototype, "header", [styleRule], {
       enumerable: true,
       initializer: function initializer() {
           return {
@@ -19931,7 +20041,7 @@ var Bundle = (function (exports) {
               fontSize: "28px"
           };
       }
-  }), _descriptor3$g = _applyDecoratedDescriptor$j(_class$G.prototype, "body", [styleRule], {
+  }), _descriptor3$f = _applyDecoratedDescriptor$i(_class$F.prototype, "body", [styleRule], {
       enumerable: true,
       initializer: function initializer() {
           return {
@@ -19945,55 +20055,26 @@ var Bundle = (function (exports) {
               }
           };
       }
-  })), _class$G);
-  var QuoteStyle = (_class3$d = function (_StyleSheet2) {
-      inherits(QuoteStyle, _StyleSheet2);
+  })), _class$F);
+  var IndexPageStyle = (_class3$c = function (_StyleSheet2) {
+      inherits(IndexPageStyle, _StyleSheet2);
 
-      function QuoteStyle() {
+      function IndexPageStyle() {
           var _ref2;
 
           var _temp2, _this2, _ret2;
 
-          classCallCheck(this, QuoteStyle);
+          classCallCheck(this, IndexPageStyle);
 
           for (var _len2 = arguments.length, args = Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
               args[_key2] = arguments[_key2];
           }
 
-          return _ret2 = (_temp2 = (_this2 = possibleConstructorReturn(this, (_ref2 = QuoteStyle.__proto__ || Object.getPrototypeOf(QuoteStyle)).call.apply(_ref2, [this].concat(args))), _this2), _initDefineProp$j(_this2, "quote", _descriptor4$e, _this2), _temp2), possibleConstructorReturn(_this2, _ret2);
-      }
-
-      return QuoteStyle;
-  }(StyleSheet), (_descriptor4$e = _applyDecoratedDescriptor$j(_class3$d.prototype, "quote", [styleRule], {
-      enumerable: true,
-      initializer: function initializer() {
-          return {
-              color: "#aaa",
-              fontStyle: "italic",
-              fontSize: "17px",
-              marginTop: "10px"
-          };
-      }
-  })), _class3$d);
-  var IndexPageStyle = (_class5$4 = function (_StyleSheet3) {
-      inherits(IndexPageStyle, _StyleSheet3);
-
-      function IndexPageStyle() {
-          var _ref3;
-
-          var _temp3, _this3, _ret3;
-
-          classCallCheck(this, IndexPageStyle);
-
-          for (var _len3 = arguments.length, args = Array(_len3), _key3 = 0; _key3 < _len3; _key3++) {
-              args[_key3] = arguments[_key3];
-          }
-
-          return _ret3 = (_temp3 = (_this3 = possibleConstructorReturn(this, (_ref3 = IndexPageStyle.__proto__ || Object.getPrototypeOf(IndexPageStyle)).call.apply(_ref3, [this].concat(args))), _this3), _initDefineProp$j(_this3, "container", _descriptor5$c, _this3), _initDefineProp$j(_this3, "topContainer", _descriptor6$a, _this3), _initDefineProp$j(_this3, "bottomContainer", _descriptor7$8, _this3), _temp3), possibleConstructorReturn(_this3, _ret3);
+          return _ret2 = (_temp2 = (_this2 = possibleConstructorReturn(this, (_ref2 = IndexPageStyle.__proto__ || Object.getPrototypeOf(IndexPageStyle)).call.apply(_ref2, [this].concat(args))), _this2), _initDefineProp$i(_this2, "container", _descriptor4$d, _this2), _initDefineProp$i(_this2, "bottomContainer", _descriptor5$b, _this2), _initDefineProp$i(_this2, "imageContainer", _descriptor6$9, _this2), _initDefineProp$i(_this2, "image", _descriptor7$7, _this2), _initDefineProp$i(_this2, "boxContainer", _descriptor8$5, _this2), _initDefineProp$i(_this2, "spin", _descriptor9$5, _this2), _initDefineProp$i(_this2, "loader", _descriptor10$4, _this2), _initDefineProp$i(_this2, "loaderContainer", _descriptor11$4, _this2), _temp2), possibleConstructorReturn(_this2, _ret2);
       }
 
       return IndexPageStyle;
-  }(StyleSheet), (_descriptor5$c = _applyDecoratedDescriptor$j(_class5$4.prototype, "container", [styleRule], {
+  }(StyleSheet), (_descriptor4$d = _applyDecoratedDescriptor$i(_class3$c.prototype, "container", [styleRule], {
       enumerable: true,
       initializer: function initializer() {
           return {
@@ -20005,19 +20086,7 @@ var Bundle = (function (exports) {
               flexDirection: "column"
           };
       }
-  }), _descriptor6$a = _applyDecoratedDescriptor$j(_class5$4.prototype, "topContainer", [styleRule], {
-      enumerable: true,
-      initializer: function initializer() {
-          return {
-              flexGrow: "1.5",
-              width: "100%",
-              backgroundColor: "#f0a150",
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center"
-          };
-      }
-  }), _descriptor7$8 = _applyDecoratedDescriptor$j(_class5$4.prototype, "bottomContainer", [styleRule], {
+  }), _descriptor5$b = _applyDecoratedDescriptor$i(_class3$c.prototype, "bottomContainer", [styleRule], {
       enumerable: true,
       initializer: function initializer() {
           return {
@@ -20028,9 +20097,86 @@ var Bundle = (function (exports) {
               textAlign: "center"
           };
       }
-  })), _class5$4);
+  }), _descriptor6$9 = _applyDecoratedDescriptor$i(_class3$c.prototype, "imageContainer", [styleRule], {
+      enumerable: true,
+      initializer: function initializer() {
+          return {
+              position: "relative",
+              margin: "18px 22px",
+              height: "calc(100% - 92px)",
+              textAlign: "center"
+          };
+      }
+  }), _descriptor7$7 = _applyDecoratedDescriptor$i(_class3$c.prototype, "image", [styleRule], {
+      enumerable: true,
+      initializer: function initializer() {
+          return {
+              maxHeight: "100%",
+              maxWidth: "100%",
+              width: "unset",
+              position: "relative",
+              borderRadius: "8px",
+              border: "2px solid #5725aa"
+          };
+      }
+  }), _descriptor8$5 = _applyDecoratedDescriptor$i(_class3$c.prototype, "boxContainer", [styleRule], {
+      enumerable: true,
+      initializer: function initializer() {
+          return {
+              height: "-webkit-fill-available",
+              width: "fit-content",
+              margin: "0 auto",
+              maxHeight: "fit-content",
+              position: "relative",
+              top: "50%",
+              transform: "translateY(-50%)"
+          };
+      }
+  }), _descriptor9$5 = _applyDecoratedDescriptor$i(_class3$c.prototype, "spin", [keyframesRule], {
+      enumerable: true,
+      initializer: function initializer() {
+          return {
+              "0%": {
+                  transform: "rotate(0deg)"
+              },
+              "100%": {
+                  transform: "rotate(360deg)"
+              }
+          };
+      }
+  }), _descriptor10$4 = _applyDecoratedDescriptor$i(_class3$c.prototype, "loader", [styleRule], {
+      enumerable: true,
+      initializer: function initializer() {
+          return {
+              border: "7px solid #00ff66",
+              borderTop: "7px solid #00000000",
+              borderRadius: "50%",
+              width: "50px",
+              height: "50px",
+              animation: "" + this.spin + " .7s linear infinite"
+          };
+      }
+  }), _descriptor11$4 = _applyDecoratedDescriptor$i(_class3$c.prototype, "loaderContainer", [styleRule], {
+      enumerable: true,
+      initializer: function initializer() {
+          return {
+              display: "none",
+              position: "absolute",
+              background: "#000",
+              opacity: "0",
+              borderRadius: "100%",
+              padding: "10px",
+              zIndex: "2",
+              margin: "0 auto",
+              left: "50%",
+              transform: "translate(-50%, -50%)",
+              top: "50%",
+              transition: "opacity ease 1s"
+          };
+      }
+  })), _class3$c);
 
-  var Card = (_dec$l = registerStyle(CardStyle), _dec$l(_class7$4 = function (_UI$Element) {
+  var Card = (_dec$k = registerStyle(CardStyle), _dec$k(_class5$4 = function (_UI$Element) {
       inherits(Card, _UI$Element);
 
       function Card() {
@@ -20043,66 +20189,12 @@ var Bundle = (function (exports) {
           value: function extraNodeAttributes(attr) {
               attr.addClass(this.styleSheet.container);
           }
-      }, {
-          key: "render",
-          value: function render() {
-              var _options = this.options,
-                  headerText = _options.headerText,
-                  bodyText = _options.bodyText;
-
-
-              return [UI.createElement(
-                  "div",
-                  { className: this.styleSheet.header },
-                  headerText
-              ), UI.createElement(
-                  "div",
-                  { className: this.styleSheet.body },
-                  bodyText.map(function (line) {
-                      return UI.createElement(
-                          "p",
-                          null,
-                          line
-                      );
-                  })
-              )];
-          }
       }]);
       return Card;
-  }(UI.Element)) || _class7$4);
+  }(UI.Element)) || _class5$4);
 
-  var Quote = (_dec2$7 = registerStyle(QuoteStyle), _dec2$7(_class8 = function (_UI$Element2) {
-      inherits(Quote, _UI$Element2);
-
-      function Quote() {
-          classCallCheck(this, Quote);
-          return possibleConstructorReturn(this, (Quote.__proto__ || Object.getPrototypeOf(Quote)).apply(this, arguments));
-      }
-
-      createClass(Quote, [{
-          key: "render",
-          value: function render() {
-              var _options2 = this.options,
-                  text = _options2.text,
-                  hasQuotes = _options2.hasQuotes,
-                  message = text;
-
-              if (hasQuotes) {
-                  message = "\"" + message + "\"";
-              }
-
-              return UI.createElement(
-                  "div",
-                  { className: this.styleSheet.quote },
-                  message
-              );
-          }
-      }]);
-      return Quote;
-  }(UI.Element)) || _class8);
-
-  var IndexPage = (_dec3$2 = registerStyle(IndexPageStyle), _dec3$2(_class9$1 = function (_UI$Element3) {
-      inherits(IndexPage, _UI$Element3);
+  var IndexPage = (_dec2$7 = registerStyle(IndexPageStyle), _dec2$7(_class6$1 = function (_UI$Element2) {
+      inherits(IndexPage, _UI$Element2);
 
       function IndexPage() {
           classCallCheck(this, IndexPage);
@@ -20117,10 +20209,156 @@ var Bundle = (function (exports) {
       }, {
           key: "render",
           value: function render() {
-              return [UI.createElement(TextTranslationList, { style: { height: "100%" } })];
+              var styleSheet = this.styleSheet;
+
+
+              return [UI.createElement(
+                  Card,
+                  null,
+                  UI.createElement(
+                      "div",
+                      { className: styleSheet.imageContainer },
+                      UI.createElement(
+                          "div",
+                          { ref: "loaderContainer", className: styleSheet.loaderContainer },
+                          UI.createElement("div", { className: styleSheet.loader })
+                      ),
+                      UI.createElement(
+                          "div",
+                          { className: styleSheet.boxContainer, ref: "boxContainer" },
+                          UI.createElement(Image, { ref: "img", className: styleSheet.image, src: "static/ANPR_placeholder.png" })
+                      )
+                  ),
+                  UI.createElement(UploadFilesCuJapca, { ref: "uploader" })
+              )];
+          }
+      }, {
+          key: "onMount",
+          value: function onMount() {
+              var _this5 = this;
+
+              this.uploader.addListener("sourceUpdate", function (path) {
+                  _this5.img.setAttribute("src", path);
+                  _this5.boxContainer.updateOptions({
+                      children: [_this5.img]
+                  });
+                  _this5.loaderContainer.setStyle("display", "block");
+                  setTimeout(function () {
+                      _this5.loaderContainer.setStyle("opacity", ".7");
+                  }, 1500);
+              });
+              this.uploader.addListener("received", function (event) {
+                  _this5.loaderContainer.setStyle("display", "none");
+                  _this5.loaderContainer.setStyle("opacity", "0");
+                  var _iteratorNormalCompletion = true;
+                  var _didIteratorError = false;
+                  var _iteratorError = undefined;
+
+                  try {
+                      for (var _iterator = event.response[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+                          var match = _step.value;
+
+                          _this5.boxContainer.appendChild(UI.createElement(BoundingBox, { data: match }));
+                      }
+                  } catch (err) {
+                      _didIteratorError = true;
+                      _iteratorError = err;
+                  } finally {
+                      try {
+                          if (!_iteratorNormalCompletion && _iterator.return) {
+                              _iterator.return();
+                          }
+                      } finally {
+                          if (_didIteratorError) {
+                              throw _iteratorError;
+                          }
+                      }
+                  }
+              });
           }
       }]);
       return IndexPage;
+  }(UI.Element)) || _class6$1);
+
+  var BoundingBoxStyle = (_class7$4 = function (_StyleSheet3) {
+      inherits(BoundingBoxStyle, _StyleSheet3);
+
+      function BoundingBoxStyle() {
+          var _ref3;
+
+          var _temp3, _this6, _ret3;
+
+          classCallCheck(this, BoundingBoxStyle);
+
+          for (var _len3 = arguments.length, args = Array(_len3), _key3 = 0; _key3 < _len3; _key3++) {
+              args[_key3] = arguments[_key3];
+          }
+
+          return _ret3 = (_temp3 = (_this6 = possibleConstructorReturn(this, (_ref3 = BoundingBoxStyle.__proto__ || Object.getPrototypeOf(BoundingBoxStyle)).call.apply(_ref3, [this].concat(args))), _this6), _initDefineProp$i(_this6, "boundingBox", _descriptor12$4, _this6), _initDefineProp$i(_this6, "label", _descriptor13$4, _this6), _temp3), possibleConstructorReturn(_this6, _ret3);
+      }
+
+      return BoundingBoxStyle;
+  }(StyleSheet), (_descriptor12$4 = _applyDecoratedDescriptor$i(_class7$4.prototype, "boundingBox", [styleRule], {
+      enumerable: true,
+      initializer: function initializer() {
+          return {
+              border: "2px solid springgreen",
+              position: "absolute",
+              fontColor: "springgreen",
+              fontSize: "17px",
+              color: "springgreen"
+          };
+      }
+  }), _descriptor13$4 = _applyDecoratedDescriptor$i(_class7$4.prototype, "label", [styleRule], {
+      enumerable: true,
+      initializer: function initializer() {
+          return {
+              position: "absolute",
+              bottom: "-26px",
+              padding: "2px",
+              background: "rgba(0,0,0,.3)",
+              margin: "0 auto",
+              transform: "translateX(-50%)",
+              left: "50%",
+              whiteSpace: "nowrap"
+          };
+      }
+  })), _class7$4);
+  var BoundingBox = (_dec3$2 = registerStyle(BoundingBoxStyle), _dec3$2(_class9$1 = function (_UI$Element3) {
+      inherits(BoundingBox, _UI$Element3);
+
+      function BoundingBox() {
+          classCallCheck(this, BoundingBox);
+          return possibleConstructorReturn(this, (BoundingBox.__proto__ || Object.getPrototypeOf(BoundingBox)).apply(this, arguments));
+      }
+
+      createClass(BoundingBox, [{
+          key: "extraNodeAttributes",
+          value: function extraNodeAttributes(attr) {
+              get(BoundingBox.prototype.__proto__ || Object.getPrototypeOf(BoundingBox.prototype), "extraNodeAttributes", this).call(this, attr);
+              attr.addClass(this.styleSheet.boundingBox);
+              var left = this.options.data.boundingBox[0];
+              var top = this.options.data.boundingBox[1];
+              var width = this.options.data.boundingBox[2] - left;
+              var height = this.options.data.boundingBox[3] - top;
+              attr.setStyle({
+                  left: left * 100 + "%",
+                  top: top * 100 + "%",
+                  width: width * 100 + "%",
+                  height: height * 100 + "%"
+              });
+          }
+      }, {
+          key: "render",
+          value: function render() {
+              return UI.createElement(
+                  "div",
+                  { className: this.styleSheet.label },
+                  this.options.data.label
+              );
+          }
+      }]);
+      return BoundingBox;
   }(UI.Element)) || _class9$1);
 
   // TODO: this file should be called StoreExtenders
@@ -23504,9 +23742,9 @@ var Bundle = (function (exports) {
 
   ArticleRenderer.markupClassMap = new MarkupClassMap(MarkupClassMap.GLOBAL, [["Article", RecursiveArticleRenderer], ["RawSVG", SVG.RawSVG]]);
 
-  var _class$H, _descriptor$j, _descriptor2$h, _descriptor3$h, _descriptor4$f, _descriptor5$d, _descriptor6$b, _class3$e, _descriptor7$9, _descriptor8$5;
+  var _class$G, _descriptor$i, _descriptor2$g, _descriptor3$g, _descriptor4$e, _descriptor5$c, _descriptor6$a, _class3$d, _descriptor7$8, _descriptor8$6;
 
-  function _initDefineProp$k(target, property, descriptor, context) {
+  function _initDefineProp$j(target, property, descriptor, context) {
       if (!descriptor) return;
       Object.defineProperty(target, property, {
           enumerable: descriptor.enumerable,
@@ -23516,7 +23754,7 @@ var Bundle = (function (exports) {
       });
   }
 
-  function _applyDecoratedDescriptor$k(target, property, decorators, descriptor, context) {
+  function _applyDecoratedDescriptor$j(target, property, decorators, descriptor, context) {
       var desc = {};
       Object['ke' + 'ys'](descriptor).forEach(function (key) {
           desc[key] = descriptor[key];
@@ -23557,7 +23795,7 @@ var Bundle = (function (exports) {
       color: color
   };
 
-  var BlogStyle = (_class$H = function (_StyleSheet) {
+  var BlogStyle = (_class$G = function (_StyleSheet) {
       inherits(BlogStyle, _StyleSheet);
 
       function BlogStyle() {
@@ -23571,7 +23809,7 @@ var Bundle = (function (exports) {
               args[_key] = arguments[_key];
           }
 
-          return _ret = (_temp = (_this = possibleConstructorReturn(this, (_ref = BlogStyle.__proto__ || Object.getPrototypeOf(BlogStyle)).call.apply(_ref, [this].concat(args))), _this), _this.titleFontSize = "2em", _initDefineProp$k(_this, "commentsTitle", _descriptor$j, _this), _initDefineProp$k(_this, "bottomSection", _descriptor2$h, _this), _initDefineProp$k(_this, "blogEntryView", _descriptor3$h, _this), _this.title = {
+          return _ret = (_temp = (_this = possibleConstructorReturn(this, (_ref = BlogStyle.__proto__ || Object.getPrototypeOf(BlogStyle)).call.apply(_ref, [this].concat(args))), _this), _this.titleFontSize = "2em", _initDefineProp$j(_this, "commentsTitle", _descriptor$i, _this), _initDefineProp$j(_this, "bottomSection", _descriptor2$g, _this), _initDefineProp$j(_this, "blogEntryView", _descriptor3$g, _this), _this.title = {
               "font-size": _this.titleFontSize,
               "padding-top": "20px",
               "padding-bottom": "10px",
@@ -23601,11 +23839,11 @@ var Bundle = (function (exports) {
               "text-align": "justify",
               "font-size": "17px",
               marginBottom: "25px"
-          }, _initDefineProp$k(_this, "whiteOverlay", _descriptor4$f, _this), _initDefineProp$k(_this, "loadMoreButton", _descriptor5$d, _this), _initDefineProp$k(_this, "sendMessageButtonStyle", _descriptor6$b, _this), _temp), possibleConstructorReturn(_this, _ret);
+          }, _initDefineProp$j(_this, "whiteOverlay", _descriptor4$e, _this), _initDefineProp$j(_this, "loadMoreButton", _descriptor5$c, _this), _initDefineProp$j(_this, "sendMessageButtonStyle", _descriptor6$a, _this), _temp), possibleConstructorReturn(_this, _ret);
       }
 
       return BlogStyle;
-  }(StyleSheet), (_descriptor$j = _applyDecoratedDescriptor$k(_class$H.prototype, "commentsTitle", [styleRule], {
+  }(StyleSheet), (_descriptor$i = _applyDecoratedDescriptor$j(_class$G.prototype, "commentsTitle", [styleRule], {
       enumerable: true,
       initializer: function initializer() {
           return {
@@ -23616,7 +23854,7 @@ var Bundle = (function (exports) {
               textTransform: "uppercase"
           };
       }
-  }), _descriptor2$h = _applyDecoratedDescriptor$k(_class$H.prototype, "bottomSection", [styleRule], {
+  }), _descriptor2$g = _applyDecoratedDescriptor$j(_class$G.prototype, "bottomSection", [styleRule], {
       enumerable: true,
       initializer: function initializer() {
           return {
@@ -23625,7 +23863,7 @@ var Bundle = (function (exports) {
               width: "100%"
           };
       }
-  }), _descriptor3$h = _applyDecoratedDescriptor$k(_class$H.prototype, "blogEntryView", [styleRule], {
+  }), _descriptor3$g = _applyDecoratedDescriptor$j(_class$G.prototype, "blogEntryView", [styleRule], {
       enumerable: true,
       initializer: function initializer() {
           return {
@@ -23636,7 +23874,7 @@ var Bundle = (function (exports) {
               // "padding-bottom": "50px",
           };
       }
-  }), _descriptor4$f = _applyDecoratedDescriptor$k(_class$H.prototype, "whiteOverlay", [styleRule], {
+  }), _descriptor4$e = _applyDecoratedDescriptor$j(_class$G.prototype, "whiteOverlay", [styleRule], {
       enumerable: true,
       initializer: function initializer() {
           return {
@@ -23648,7 +23886,7 @@ var Bundle = (function (exports) {
               width: "92%"
           };
       }
-  }), _descriptor5$d = _applyDecoratedDescriptor$k(_class$H.prototype, "loadMoreButton", [styleRule], {
+  }), _descriptor5$c = _applyDecoratedDescriptor$j(_class$G.prototype, "loadMoreButton", [styleRule], {
       enumerable: true,
       initializer: function initializer() {
           return {
@@ -23689,7 +23927,7 @@ var Bundle = (function (exports) {
               }
           };
       }
-  }), _descriptor6$b = _applyDecoratedDescriptor$k(_class$H.prototype, "sendMessageButtonStyle", [styleRule], {
+  }), _descriptor6$a = _applyDecoratedDescriptor$j(_class$G.prototype, "sendMessageButtonStyle", [styleRule], {
       enumerable: true,
       initializer: function initializer() {
           return {
@@ -23724,8 +23962,8 @@ var Bundle = (function (exports) {
               }
           };
       }
-  })), _class$H);
-  var BlogArticleRendererStyle = (_class3$e = function (_StyleSheet2) {
+  })), _class$G);
+  var BlogArticleRendererStyle = (_class3$d = function (_StyleSheet2) {
       inherits(BlogArticleRendererStyle, _StyleSheet2);
 
       function BlogArticleRendererStyle() {
@@ -23744,11 +23982,11 @@ var Bundle = (function (exports) {
               "margin-top": "30px",
               "margin-bottom": "30px",
               "width": "100%"
-          }, _initDefineProp$k(_this2, "blogArticleRenderer", _descriptor7$9, _this2), _initDefineProp$k(_this2, "quote", _descriptor8$5, _this2), _temp2), possibleConstructorReturn(_this2, _ret2);
+          }, _initDefineProp$j(_this2, "blogArticleRenderer", _descriptor7$8, _this2), _initDefineProp$j(_this2, "quote", _descriptor8$6, _this2), _temp2), possibleConstructorReturn(_this2, _ret2);
       }
 
       return BlogArticleRendererStyle;
-  }(StyleSheet), (_descriptor7$9 = _applyDecoratedDescriptor$k(_class3$e.prototype, "blogArticleRenderer", [styleRule], {
+  }(StyleSheet), (_descriptor7$8 = _applyDecoratedDescriptor$j(_class3$d.prototype, "blogArticleRenderer", [styleRule], {
       enumerable: true,
       initializer: function initializer() {
           return {
@@ -23760,7 +23998,7 @@ var Bundle = (function (exports) {
               " h6": this.hStyle
           };
       }
-  }), _descriptor8$5 = _applyDecoratedDescriptor$k(_class3$e.prototype, "quote", [styleRule], {
+  }), _descriptor8$6 = _applyDecoratedDescriptor$j(_class3$d.prototype, "quote", [styleRule], {
       enumerable: true,
       initializer: function initializer() {
           return {
@@ -23773,11 +24011,11 @@ var Bundle = (function (exports) {
               "width": "100%"
           };
       }
-  })), _class3$e);
+  })), _class3$d);
 
-  var _dec$m, _class$I, _dec2$8, _class2$8;
+  var _dec$l, _class$H, _dec2$8, _class2$8;
 
-  var BlogArticleRenderer = (_dec$m = registerStyle(BlogArticleRendererStyle), _dec$m(_class$I = function (_ArticleRenderer) {
+  var BlogArticleRenderer = (_dec$l = registerStyle(BlogArticleRendererStyle), _dec$l(_class$H = function (_ArticleRenderer) {
       inherits(BlogArticleRenderer, _ArticleRenderer);
 
       function BlogArticleRenderer() {
@@ -23793,7 +24031,7 @@ var Bundle = (function (exports) {
           }
       }]);
       return BlogArticleRenderer;
-  }(ArticleRenderer)) || _class$I);
+  }(ArticleRenderer)) || _class$H);
   var BlogQuote = (_dec2$8 = registerStyle(BlogArticleRendererStyle), _dec2$8(_class2$8 = function (_UI$Primitive) {
       inherits(BlogQuote, _UI$Primitive);
 
@@ -25622,9 +25860,9 @@ var Bundle = (function (exports) {
       }
   });
 
-  var _class$J, _temp$8;
+  var _class$I, _temp$8;
 
-  var BasePopup = (_temp$8 = _class$J = function (_FloatingWindow) {
+  var BasePopup = (_temp$8 = _class$I = function (_FloatingWindow) {
       inherits(BasePopup, _FloatingWindow);
 
       function BasePopup() {
@@ -25872,7 +26110,7 @@ var Bundle = (function (exports) {
           }
       }]);
       return BasePopup;
-  }(FloatingWindow), _class$J.bodyPopups = new Set(), _temp$8);
+  }(FloatingWindow), _class$I.bodyPopups = new Set(), _temp$8);
 
   var Popup = function (_BasePopup) {
       inherits(Popup, _BasePopup);
@@ -26972,9 +27210,9 @@ var Bundle = (function (exports) {
 
   var CountryStore = new CountryStoreClass("country", Country);
 
-  var _class$K, _descriptor$k, _descriptor2$i, _descriptor3$i, _descriptor4$g, _descriptor5$e, _descriptor6$c, _descriptor7$a, _descriptor8$6, _descriptor9$5, _descriptor10$4, _descriptor11$4, _descriptor12$4, _descriptor13$4, _descriptor14$4, _descriptor15$4, _descriptor16$4, _descriptor17$4, _descriptor18$2, _descriptor19$2, _descriptor20$2, _descriptor21$1, _descriptor22, _descriptor23;
+  var _class$J, _descriptor$j, _descriptor2$h, _descriptor3$h, _descriptor4$f, _descriptor5$d, _descriptor6$b, _descriptor7$9, _descriptor8$7, _descriptor9$6, _descriptor10$5, _descriptor11$5, _descriptor12$5, _descriptor13$5, _descriptor14$4, _descriptor15$4, _descriptor16$4, _descriptor17$4, _descriptor18$2, _descriptor19$2, _descriptor20$2, _descriptor21$1, _descriptor22, _descriptor23;
 
-  function _initDefineProp$l(target, property, descriptor, context) {
+  function _initDefineProp$k(target, property, descriptor, context) {
       if (!descriptor) return;
       Object.defineProperty(target, property, {
           enumerable: descriptor.enumerable,
@@ -26984,7 +27222,7 @@ var Bundle = (function (exports) {
       });
   }
 
-  function _applyDecoratedDescriptor$l(target, property, decorators, descriptor, context) {
+  function _applyDecoratedDescriptor$k(target, property, decorators, descriptor, context) {
       var desc = {};
       Object['ke' + 'ys'](descriptor).forEach(function (key) {
           desc[key] = descriptor[key];
@@ -27022,7 +27260,7 @@ var Bundle = (function (exports) {
   var signInButtonHeight = 50;
   var signInButtonWidth = 120;
 
-  var LoginStyle = (_class$K = function (_StyleSheet) {
+  var LoginStyle = (_class$J = function (_StyleSheet) {
       inherits(LoginStyle, _StyleSheet);
 
       function LoginStyle() {
@@ -27036,17 +27274,17 @@ var Bundle = (function (exports) {
               args[_key] = arguments[_key];
           }
 
-          return _ret = (_temp = (_this = possibleConstructorReturn(this, (_ref = LoginStyle.__proto__ || Object.getPrototypeOf(LoginStyle)).call.apply(_ref, [this].concat(args))), _this), _initDefineProp$l(_this, "loginRegisterSystem", _descriptor$k, _this), _initDefineProp$l(_this, "loginRegisterButtons", _descriptor2$i, _this), _initDefineProp$l(_this, "loginSystemButton", _descriptor3$i, _this), _initDefineProp$l(_this, "registerSystemButton", _descriptor4$g, _this), _this.selectedLeft = {
+          return _ret = (_temp = (_this = possibleConstructorReturn(this, (_ref = LoginStyle.__proto__ || Object.getPrototypeOf(LoginStyle)).call.apply(_ref, [this].concat(args))), _this), _initDefineProp$k(_this, "loginRegisterSystem", _descriptor$j, _this), _initDefineProp$k(_this, "loginRegisterButtons", _descriptor2$h, _this), _initDefineProp$k(_this, "loginSystemButton", _descriptor3$h, _this), _initDefineProp$k(_this, "registerSystemButton", _descriptor4$f, _this), _this.selectedLeft = {
               borderBottom: "0",
               borderRight: "0",
               backgroundColor: "#fff",
               fontWeight: "bold"
-          }, _initDefineProp$l(_this, "selectedLeftClass", _descriptor5$e, _this), _this.selectedRight = {
+          }, _initDefineProp$k(_this, "selectedLeftClass", _descriptor5$d, _this), _this.selectedRight = {
               borderBottom: "0",
               borderLeft: "0",
               backgroundColor: "#fff",
               fontWeight: "bold"
-          }, _initDefineProp$l(_this, "selectedRightClass", _descriptor6$c, _this), _initDefineProp$l(_this, "loginWidget", _descriptor7$a, _this), _initDefineProp$l(_this, "registerWidget", _descriptor8$6, _this), _this.fontAwesomeIcon = {
+          }, _initDefineProp$k(_this, "selectedRightClass", _descriptor6$b, _this), _initDefineProp$k(_this, "loginWidget", _descriptor7$9, _this), _initDefineProp$k(_this, "registerWidget", _descriptor8$7, _this), _this.fontAwesomeIcon = {
               height: fontAwesomeIconHeight + "px",
               lineHeight: fontAwesomeIconHeight + "px",
               width: "15%",
@@ -27059,7 +27297,7 @@ var Bundle = (function (exports) {
               borderBottomLeftRadius: "5px",
               borderRight: "0px solid white",
               marginTop: "20px"
-          }, _initDefineProp$l(_this, "input", _descriptor9$5, _this), _initDefineProp$l(_this, "countrySelect", _descriptor10$4, _this), _initDefineProp$l(_this, "badLogin", _descriptor11$4, _this), _initDefineProp$l(_this, "rememberMe", _descriptor12$4, _this), _initDefineProp$l(_this, "rememberMeCheckbox", _descriptor13$4, _this), _initDefineProp$l(_this, "forgotPassword", _descriptor14$4, _this), _initDefineProp$l(_this, "signInButtonContainer", _descriptor15$4, _this), _initDefineProp$l(_this, "signInButton", _descriptor16$4, _this), _initDefineProp$l(_this, "horizontalLine", _descriptor17$4, _this), _this.connectWith = {
+          }, _initDefineProp$k(_this, "input", _descriptor9$6, _this), _initDefineProp$k(_this, "countrySelect", _descriptor10$5, _this), _initDefineProp$k(_this, "badLogin", _descriptor11$5, _this), _initDefineProp$k(_this, "rememberMe", _descriptor12$5, _this), _initDefineProp$k(_this, "rememberMeCheckbox", _descriptor13$5, _this), _initDefineProp$k(_this, "forgotPassword", _descriptor14$4, _this), _initDefineProp$k(_this, "signInButtonContainer", _descriptor15$4, _this), _initDefineProp$k(_this, "signInButton", _descriptor16$4, _this), _initDefineProp$k(_this, "horizontalLine", _descriptor17$4, _this), _this.connectWith = {
               width: "100%",
               textAlign: "center",
               marginTop: "20px"
@@ -27071,11 +27309,11 @@ var Bundle = (function (exports) {
               justifyContent: "center",
               alignItems: "center",
               marginTop: "20px"
-          }, _initDefineProp$l(_this, "faLogo", _descriptor18$2, _this), _initDefineProp$l(_this, "recaptchaContainer", _descriptor19$2, _this), _initDefineProp$l(_this, "connectWithButtonsSpan", _descriptor20$2, _this), _initDefineProp$l(_this, "thirdPartyLoginContainer", _descriptor21$1, _this), _this.socialConnectDimensions = "35px", _initDefineProp$l(_this, "socialConnectButtonContainer", _descriptor22, _this), _initDefineProp$l(_this, "socialConnectButtonIcon", _descriptor23, _this), _temp), possibleConstructorReturn(_this, _ret);
+          }, _initDefineProp$k(_this, "faLogo", _descriptor18$2, _this), _initDefineProp$k(_this, "recaptchaContainer", _descriptor19$2, _this), _initDefineProp$k(_this, "connectWithButtonsSpan", _descriptor20$2, _this), _initDefineProp$k(_this, "thirdPartyLoginContainer", _descriptor21$1, _this), _this.socialConnectDimensions = "35px", _initDefineProp$k(_this, "socialConnectButtonContainer", _descriptor22, _this), _initDefineProp$k(_this, "socialConnectButtonIcon", _descriptor23, _this), _temp), possibleConstructorReturn(_this, _ret);
       }
 
       return LoginStyle;
-  }(StyleSheet), (_descriptor$k = _applyDecoratedDescriptor$l(_class$K.prototype, "loginRegisterSystem", [styleRule], {
+  }(StyleSheet), (_descriptor$j = _applyDecoratedDescriptor$k(_class$J.prototype, "loginRegisterSystem", [styleRule], {
       enumerable: true,
       initializer: function initializer() {
           return function () {
@@ -27100,7 +27338,7 @@ var Bundle = (function (exports) {
               }
           };
       }
-  }), _descriptor2$i = _applyDecoratedDescriptor$l(_class$K.prototype, "loginRegisterButtons", [styleRule], {
+  }), _descriptor2$h = _applyDecoratedDescriptor$k(_class$J.prototype, "loginRegisterButtons", [styleRule], {
       enumerable: true,
       initializer: function initializer() {
           return {
@@ -27110,7 +27348,7 @@ var Bundle = (function (exports) {
               height: buttonHeight / loginHeight * 100 + "%"
           };
       }
-  }), _descriptor3$i = _applyDecoratedDescriptor$l(_class$K.prototype, "loginSystemButton", [styleRule], {
+  }), _descriptor3$h = _applyDecoratedDescriptor$k(_class$J.prototype, "loginSystemButton", [styleRule], {
       enumerable: true,
       initializer: function initializer() {
           return defineProperty({
@@ -27133,7 +27371,7 @@ var Bundle = (function (exports) {
               textTransform: "uppercase"
           }, "fontSize", "1.1em");
       }
-  }), _descriptor4$g = _applyDecoratedDescriptor$l(_class$K.prototype, "registerSystemButton", [styleRule], {
+  }), _descriptor4$f = _applyDecoratedDescriptor$k(_class$J.prototype, "registerSystemButton", [styleRule], {
       enumerable: true,
       initializer: function initializer() {
           return defineProperty({
@@ -27156,7 +27394,7 @@ var Bundle = (function (exports) {
               textTransform: "uppercase"
           }, "fontSize", "1.1em");
       }
-  }), _descriptor5$e = _applyDecoratedDescriptor$l(_class$K.prototype, "selectedLeftClass", [styleRule], {
+  }), _descriptor5$d = _applyDecoratedDescriptor$k(_class$J.prototype, "selectedLeftClass", [styleRule], {
       enumerable: true,
       initializer: function initializer() {
           return {
@@ -27165,7 +27403,7 @@ var Bundle = (function (exports) {
               backgroundColor: "#fff"
           };
       }
-  }), _descriptor6$c = _applyDecoratedDescriptor$l(_class$K.prototype, "selectedRightClass", [styleRule], {
+  }), _descriptor6$b = _applyDecoratedDescriptor$k(_class$J.prototype, "selectedRightClass", [styleRule], {
       enumerable: true,
       initializer: function initializer() {
           return {
@@ -27174,7 +27412,7 @@ var Bundle = (function (exports) {
               backgroundColor: "#fff"
           };
       }
-  }), _descriptor7$a = _applyDecoratedDescriptor$l(_class$K.prototype, "loginWidget", [styleRule], {
+  }), _descriptor7$9 = _applyDecoratedDescriptor$k(_class$J.prototype, "loginWidget", [styleRule], {
       enumerable: true,
       initializer: function initializer() {
           return {
@@ -27186,7 +27424,7 @@ var Bundle = (function (exports) {
               borderTop: "0px solid #d3d5d9"
           };
       }
-  }), _descriptor8$6 = _applyDecoratedDescriptor$l(_class$K.prototype, "registerWidget", [styleRule], {
+  }), _descriptor8$7 = _applyDecoratedDescriptor$k(_class$J.prototype, "registerWidget", [styleRule], {
       enumerable: true,
       initializer: function initializer() {
           return {
@@ -27198,7 +27436,7 @@ var Bundle = (function (exports) {
               borderTop: "0px solid #d3d5d9"
           };
       }
-  }), _descriptor9$5 = _applyDecoratedDescriptor$l(_class$K.prototype, "input", [styleRule], {
+  }), _descriptor9$6 = _applyDecoratedDescriptor$k(_class$J.prototype, "input", [styleRule], {
       enumerable: true,
       initializer: function initializer() {
           return {
@@ -27226,7 +27464,7 @@ var Bundle = (function (exports) {
               }
           };
       }
-  }), _descriptor10$4 = _applyDecoratedDescriptor$l(_class$K.prototype, "countrySelect", [styleRule], {
+  }), _descriptor10$5 = _applyDecoratedDescriptor$k(_class$J.prototype, "countrySelect", [styleRule], {
       enumerable: true,
       initializer: function initializer() {
           return {
@@ -27237,7 +27475,7 @@ var Bundle = (function (exports) {
               marginBottom: "10px"
           };
       }
-  }), _descriptor11$4 = _applyDecoratedDescriptor$l(_class$K.prototype, "badLogin", [styleRule], {
+  }), _descriptor11$5 = _applyDecoratedDescriptor$k(_class$J.prototype, "badLogin", [styleRule], {
       enumerable: true,
       initializer: function initializer() {
           return {
@@ -27248,7 +27486,7 @@ var Bundle = (function (exports) {
               textAlign: "center"
           };
       }
-  }), _descriptor12$4 = _applyDecoratedDescriptor$l(_class$K.prototype, "rememberMe", [styleRule], {
+  }), _descriptor12$5 = _applyDecoratedDescriptor$k(_class$J.prototype, "rememberMe", [styleRule], {
       enumerable: true,
       initializer: function initializer() {
           return {
@@ -27257,14 +27495,14 @@ var Bundle = (function (exports) {
               paddingLeft: "5px"
           };
       }
-  }), _descriptor13$4 = _applyDecoratedDescriptor$l(_class$K.prototype, "rememberMeCheckbox", [styleRule], {
+  }), _descriptor13$5 = _applyDecoratedDescriptor$k(_class$J.prototype, "rememberMeCheckbox", [styleRule], {
       enumerable: true,
       initializer: function initializer() {
           return {
               float: "left"
           };
       }
-  }), _descriptor14$4 = _applyDecoratedDescriptor$l(_class$K.prototype, "forgotPassword", [styleRule], {
+  }), _descriptor14$4 = _applyDecoratedDescriptor$k(_class$J.prototype, "forgotPassword", [styleRule], {
       enumerable: true,
       initializer: function initializer() {
           return {
@@ -27273,7 +27511,7 @@ var Bundle = (function (exports) {
               paddingRight: "5px"
           };
       }
-  }), _descriptor15$4 = _applyDecoratedDescriptor$l(_class$K.prototype, "signInButtonContainer", [styleRule], {
+  }), _descriptor15$4 = _applyDecoratedDescriptor$k(_class$J.prototype, "signInButtonContainer", [styleRule], {
       enumerable: true,
       initializer: function initializer() {
           return {
@@ -27285,7 +27523,7 @@ var Bundle = (function (exports) {
               margin: "20px auto"
           };
       }
-  }), _descriptor16$4 = _applyDecoratedDescriptor$l(_class$K.prototype, "signInButton", [styleRule], {
+  }), _descriptor16$4 = _applyDecoratedDescriptor$k(_class$J.prototype, "signInButton", [styleRule], {
       enumerable: true,
       initializer: function initializer() {
           return {
@@ -27307,7 +27545,7 @@ var Bundle = (function (exports) {
               }
           };
       }
-  }), _descriptor17$4 = _applyDecoratedDescriptor$l(_class$K.prototype, "horizontalLine", [styleRule], {
+  }), _descriptor17$4 = _applyDecoratedDescriptor$k(_class$J.prototype, "horizontalLine", [styleRule], {
       enumerable: true,
       initializer: function initializer() {
           return {
@@ -27316,7 +27554,7 @@ var Bundle = (function (exports) {
               marginTop: "20px"
           };
       }
-  }), _descriptor18$2 = _applyDecoratedDescriptor$l(_class$K.prototype, "faLogo", [styleRule], {
+  }), _descriptor18$2 = _applyDecoratedDescriptor$k(_class$J.prototype, "faLogo", [styleRule], {
       enumerable: true,
       initializer: function initializer() {
           return {
@@ -27341,7 +27579,7 @@ var Bundle = (function (exports) {
               fontWeight: "bold"
           };
       }
-  }), _descriptor19$2 = _applyDecoratedDescriptor$l(_class$K.prototype, "recaptchaContainer", [styleRule], {
+  }), _descriptor19$2 = _applyDecoratedDescriptor$k(_class$J.prototype, "recaptchaContainer", [styleRule], {
       enumerable: true,
       initializer: function initializer() {
           return {
@@ -27352,7 +27590,7 @@ var Bundle = (function (exports) {
               width: "100%"
           };
       }
-  }), _descriptor20$2 = _applyDecoratedDescriptor$l(_class$K.prototype, "connectWithButtonsSpan", [styleRule], {
+  }), _descriptor20$2 = _applyDecoratedDescriptor$k(_class$J.prototype, "connectWithButtonsSpan", [styleRule], {
       enumerable: true,
       initializer: function initializer() {
           return {
@@ -27360,7 +27598,7 @@ var Bundle = (function (exports) {
               fontSize: "15px"
           };
       }
-  }), _descriptor21$1 = _applyDecoratedDescriptor$l(_class$K.prototype, "thirdPartyLoginContainer", [styleRule], {
+  }), _descriptor21$1 = _applyDecoratedDescriptor$k(_class$J.prototype, "thirdPartyLoginContainer", [styleRule], {
       enumerable: true,
       initializer: function initializer() {
           return {
@@ -27371,7 +27609,7 @@ var Bundle = (function (exports) {
               margin: "15px 0"
           };
       }
-  }), _descriptor22 = _applyDecoratedDescriptor$l(_class$K.prototype, "socialConnectButtonContainer", [styleRule], {
+  }), _descriptor22 = _applyDecoratedDescriptor$k(_class$J.prototype, "socialConnectButtonContainer", [styleRule], {
       enumerable: true,
       initializer: function initializer() {
           return {
@@ -27392,7 +27630,7 @@ var Bundle = (function (exports) {
               }
           };
       }
-  }), _descriptor23 = _applyDecoratedDescriptor$l(_class$K.prototype, "socialConnectButtonIcon", [styleRule], {
+  }), _descriptor23 = _applyDecoratedDescriptor$k(_class$J.prototype, "socialConnectButtonIcon", [styleRule], {
       enumerable: true,
       initializer: function initializer() {
           return {
@@ -27403,9 +27641,9 @@ var Bundle = (function (exports) {
               alignItems: "center"
           };
       }
-  })), _class$K);
+  })), _class$J);
 
-  var _dec$n, _class$L, _dec2$9, _class2$9, _dec3$3, _class3$f, _dec4, _class4$2, _dec5, _class5$5, _dec6, _class6$1, _dec7, _class7$5;
+  var _dec$m, _class$K, _dec2$9, _class2$9, _dec3$3, _class3$e, _dec4, _class4$2, _dec5, _class5$5, _dec6, _class6$2, _dec7, _class7$5;
 
   var ERROR_TIMEOUT = 6 * 1000;
 
@@ -27430,7 +27668,7 @@ var Bundle = (function (exports) {
       }
   };
 
-  var SocialConnectButton = (_dec$n = registerStyle(LoginStyle), _dec$n(_class$L = function (_UI$Primitive) {
+  var SocialConnectButton = (_dec$m = registerStyle(LoginStyle), _dec$m(_class$K = function (_UI$Primitive) {
       inherits(SocialConnectButton, _UI$Primitive);
 
       function SocialConnectButton() {
@@ -27483,7 +27721,7 @@ var Bundle = (function (exports) {
           }
       }]);
       return SocialConnectButton;
-  }(UI.Primitive("button"))) || _class$L);
+  }(UI.Primitive("button"))) || _class$K);
   var ThirdPartyLogin = (_dec2$9 = registerStyle(LoginStyle), _dec2$9(_class2$9 = function (_UI$Element) {
       inherits(ThirdPartyLogin, _UI$Element);
 
@@ -27529,7 +27767,7 @@ var Bundle = (function (exports) {
       return ThirdPartyLogin;
   }(UI.Element)) || _class2$9);
 
-  var LoginWidget = (_dec3$3 = registerStyle(LoginStyle), _dec3$3(_class3$f = function (_UI$Element2) {
+  var LoginWidget = (_dec3$3 = registerStyle(LoginStyle), _dec3$3(_class3$e = function (_UI$Element2) {
       inherits(LoginWidget, _UI$Element2);
 
       function LoginWidget() {
@@ -27693,7 +27931,7 @@ var Bundle = (function (exports) {
           }
       }]);
       return LoginWidget;
-  }(UI.Element)) || _class3$f);
+  }(UI.Element)) || _class3$e);
 
   var RecaptchaWidget = function (_UI$Element3) {
       inherits(RecaptchaWidget, _UI$Element3);
@@ -27952,7 +28190,7 @@ var Bundle = (function (exports) {
       }]);
       return NormalLogin;
   }(UI.Element)) || _class5$5);
-  var LoginTabButton = (_dec6 = registerStyle(LoginStyle), _dec6(_class6$1 = function (_UI$Primitive2) {
+  var LoginTabButton = (_dec6 = registerStyle(LoginStyle), _dec6(_class6$2 = function (_UI$Primitive2) {
       inherits(LoginTabButton, _UI$Primitive2);
 
       function LoginTabButton() {
@@ -27977,7 +28215,7 @@ var Bundle = (function (exports) {
           }
       }]);
       return LoginTabButton;
-  }(UI.Primitive(BasicTabTitle, "div"))) || _class6$1);
+  }(UI.Primitive(BasicTabTitle, "div"))) || _class6$2);
   var RegisterTabButton = (_dec7 = registerStyle(LoginStyle), _dec7(_class7$5 = function (_UI$Primitive3) {
       inherits(RegisterTabButton, _UI$Primitive3);
 
@@ -28085,9 +28323,9 @@ var Bundle = (function (exports) {
       return LoginModal;
   }(Modal);
 
-  var _class$M, _descriptor$l, _descriptor2$j, _descriptor3$j, _descriptor4$h, _descriptor5$f;
+  var _class$L, _descriptor$k, _descriptor2$i, _descriptor3$i, _descriptor4$g, _descriptor5$e;
 
-  function _initDefineProp$m(target, property, descriptor, context) {
+  function _initDefineProp$l(target, property, descriptor, context) {
       if (!descriptor) return;
       Object.defineProperty(target, property, {
           enumerable: descriptor.enumerable,
@@ -28097,7 +28335,7 @@ var Bundle = (function (exports) {
       });
   }
 
-  function _applyDecoratedDescriptor$m(target, property, decorators, descriptor, context) {
+  function _applyDecoratedDescriptor$l(target, property, decorators, descriptor, context) {
       var desc = {};
       Object['ke' + 'ys'](descriptor).forEach(function (key) {
           desc[key] = descriptor[key];
@@ -28126,7 +28364,7 @@ var Bundle = (function (exports) {
       return desc;
   }
 
-  var VotingWidgetStyle = (_class$M = function (_StyleSheet) {
+  var VotingWidgetStyle = (_class$L = function (_StyleSheet) {
       inherits(VotingWidgetStyle, _StyleSheet);
 
       function VotingWidgetStyle() {
@@ -28140,7 +28378,7 @@ var Bundle = (function (exports) {
               args[_key] = arguments[_key];
           }
 
-          return _ret = (_temp = (_this = possibleConstructorReturn(this, (_ref = VotingWidgetStyle.__proto__ || Object.getPrototypeOf(VotingWidgetStyle)).call.apply(_ref, [this].concat(args))), _this), _this.height = 40, _this.size = 1, _this.likeColor = _this.options.likeColor || "#1E8921", _this.dislikeColor = _this.options.dislikeColor || "#C5302C", _this.notVoteColor = _this.options.notVoteColor || "#313534", _this.balanceColor = _this.options.balanceColor || "#313534", _this.orientation = Orientation.VERTICAL, _initDefineProp$m(_this, "container", _descriptor$l, _this), _this.mainClass = {
+          return _ret = (_temp = (_this = possibleConstructorReturn(this, (_ref = VotingWidgetStyle.__proto__ || Object.getPrototypeOf(VotingWidgetStyle)).call.apply(_ref, [this].concat(args))), _this), _this.height = 40, _this.size = 1, _this.likeColor = _this.options.likeColor || "#1E8921", _this.dislikeColor = _this.options.dislikeColor || "#C5302C", _this.notVoteColor = _this.options.notVoteColor || "#313534", _this.balanceColor = _this.options.balanceColor || "#313534", _this.orientation = Orientation.VERTICAL, _initDefineProp$l(_this, "container", _descriptor$k, _this), _this.mainClass = {
               height: "40px",
               lineHeight: "40px",
               fontSize: "14px",
@@ -28151,17 +28389,17 @@ var Bundle = (function (exports) {
           }, _this.thumbsStyle = {
               fontSize: _this.height / 2 + "px",
               lineHeight: _this.height + "px"
-          }, _initDefineProp$m(_this, "displayStyle", _descriptor2$j, _this), _this.counterStyle = {
+          }, _initDefineProp$l(_this, "displayStyle", _descriptor2$i, _this), _this.counterStyle = {
               fontSize: 18 * _this.size + "px",
               fontWeight: "900",
               color: _this.balanceColor
-          }, _initDefineProp$m(_this, "thumbsUpHoverStyle", _descriptor3$j, _this), _initDefineProp$m(_this, "thumbsDownHoverStyle", _descriptor4$h, _this), _initDefineProp$m(_this, "padding", _descriptor5$f, _this), _temp), possibleConstructorReturn(_this, _ret);
+          }, _initDefineProp$l(_this, "thumbsUpHoverStyle", _descriptor3$i, _this), _initDefineProp$l(_this, "thumbsDownHoverStyle", _descriptor4$g, _this), _initDefineProp$l(_this, "padding", _descriptor5$e, _this), _temp), possibleConstructorReturn(_this, _ret);
       } //            |
       //      |- Triadic colors + Shades
 
 
       return VotingWidgetStyle;
-  }(StyleSheet), (_descriptor$l = _applyDecoratedDescriptor$m(_class$M.prototype, "container", [styleRule], {
+  }(StyleSheet), (_descriptor$k = _applyDecoratedDescriptor$l(_class$L.prototype, "container", [styleRule], {
       enumerable: true,
       initializer: function initializer() {
           return {
@@ -28174,7 +28412,7 @@ var Bundle = (function (exports) {
               alignItems: "center"
           };
       }
-  }), _descriptor2$j = _applyDecoratedDescriptor$m(_class$M.prototype, "displayStyle", [styleRule], {
+  }), _descriptor2$i = _applyDecoratedDescriptor$l(_class$L.prototype, "displayStyle", [styleRule], {
       enumerable: true,
       initializer: function initializer() {
           return {
@@ -28183,7 +28421,7 @@ var Bundle = (function (exports) {
               paddingLeft: "3px"
           };
       }
-  }), _descriptor3$j = _applyDecoratedDescriptor$m(_class$M.prototype, "thumbsUpHoverStyle", [styleRule], {
+  }), _descriptor3$i = _applyDecoratedDescriptor$l(_class$L.prototype, "thumbsUpHoverStyle", [styleRule], {
       enumerable: true,
       initializer: function initializer() {
           return {
@@ -28195,7 +28433,7 @@ var Bundle = (function (exports) {
               }
           };
       }
-  }), _descriptor4$h = _applyDecoratedDescriptor$m(_class$M.prototype, "thumbsDownHoverStyle", [styleRule], {
+  }), _descriptor4$g = _applyDecoratedDescriptor$l(_class$L.prototype, "thumbsDownHoverStyle", [styleRule], {
       enumerable: true,
       initializer: function initializer() {
           return {
@@ -28207,7 +28445,7 @@ var Bundle = (function (exports) {
               }
           };
       }
-  }), _descriptor5$f = _applyDecoratedDescriptor$m(_class$M.prototype, "padding", [styleRule], {
+  }), _descriptor5$e = _applyDecoratedDescriptor$l(_class$L.prototype, "padding", [styleRule], {
       enumerable: true,
       initializer: function initializer() {
           return {
@@ -28217,9 +28455,9 @@ var Bundle = (function (exports) {
               height: this.height + "px"
           };
       }
-  })), _class$M);
+  })), _class$L);
 
-  var _dec$o, _class$N;
+  var _dec$n, _class$M;
 
   var VotingWidget = function (_UI$Element) {
       inherits(VotingWidget, _UI$Element);
@@ -28408,7 +28646,7 @@ var Bundle = (function (exports) {
   // TODO: rewrite
 
 
-  var CommentVotingWidgetWithThumbs = (_dec$o = registerStyle(VotingWidgetStyle), _dec$o(_class$N = function (_CommentVotingWidget) {
+  var CommentVotingWidgetWithThumbs = (_dec$n = registerStyle(VotingWidgetStyle), _dec$n(_class$M = function (_CommentVotingWidget) {
       inherits(CommentVotingWidgetWithThumbs, _CommentVotingWidget);
 
       function CommentVotingWidgetWithThumbs() {
@@ -28462,11 +28700,11 @@ var Bundle = (function (exports) {
           }
       }]);
       return CommentVotingWidgetWithThumbs;
-  }(CommentVotingWidget)) || _class$N);
+  }(CommentVotingWidget)) || _class$M);
 
-  var _class$O, _descriptor$m, _descriptor2$k, _descriptor3$k, _descriptor4$i, _descriptor5$g, _descriptor6$d, _descriptor7$b, _descriptor8$7, _descriptor9$6, _descriptor10$5, _descriptor11$5;
+  var _class$N, _descriptor$l, _descriptor2$j, _descriptor3$j, _descriptor4$h, _descriptor5$f, _descriptor6$c, _descriptor7$a, _descriptor8$8, _descriptor9$7, _descriptor10$6, _descriptor11$6;
 
-  function _initDefineProp$n(target, property, descriptor, context) {
+  function _initDefineProp$m(target, property, descriptor, context) {
       if (!descriptor) return;
       Object.defineProperty(target, property, {
           enumerable: descriptor.enumerable,
@@ -28476,7 +28714,7 @@ var Bundle = (function (exports) {
       });
   }
 
-  function _applyDecoratedDescriptor$n(target, property, decorators, descriptor, context) {
+  function _applyDecoratedDescriptor$m(target, property, decorators, descriptor, context) {
       var desc = {};
       Object['ke' + 'ys'](descriptor).forEach(function (key) {
           desc[key] = descriptor[key];
@@ -28505,7 +28743,7 @@ var Bundle = (function (exports) {
       return desc;
   }
 
-  var ChatStyle = (_class$O = function (_StyleSheet) {
+  var ChatStyle = (_class$N = function (_StyleSheet) {
       inherits(ChatStyle, _StyleSheet);
 
       function ChatStyle() {
@@ -28519,7 +28757,7 @@ var Bundle = (function (exports) {
               args[_key] = arguments[_key];
           }
 
-          return _ret = (_temp = (_this = possibleConstructorReturn(this, (_ref = ChatStyle.__proto__ || Object.getPrototypeOf(ChatStyle)).call.apply(_ref, [this].concat(args))), _this), _this.navbarHeight = "50px", _this.renderMessageHeight = "100px", _this.userFontSize = "1.1em", _this.commentFontSize = "1.1em", _this.backgroundColor = "#fff", _this.hrBackgroundColor = "#ddd", _this.hoverBackgroundColor = "#f8f8f8", _initDefineProp$n(_this, "renderMessageView", _descriptor$m, _this), _initDefineProp$n(_this, "renderMessage", _descriptor2$k, _this), _initDefineProp$n(_this, "chatInput", _descriptor3$k, _this), _initDefineProp$n(_this, "messageBoxButton", _descriptor4$i, _this), _this.previewButton = { // TODO: This is currently not restyled.
+          return _ret = (_temp = (_this = possibleConstructorReturn(this, (_ref = ChatStyle.__proto__ || Object.getPrototypeOf(ChatStyle)).call.apply(_ref, [this].concat(args))), _this), _this.navbarHeight = "50px", _this.renderMessageHeight = "100px", _this.userFontSize = "1.1em", _this.commentFontSize = "1.1em", _this.backgroundColor = "#fff", _this.hrBackgroundColor = "#ddd", _this.hoverBackgroundColor = "#f8f8f8", _initDefineProp$m(_this, "renderMessageView", _descriptor$l, _this), _initDefineProp$m(_this, "renderMessage", _descriptor2$j, _this), _initDefineProp$m(_this, "chatInput", _descriptor3$j, _this), _initDefineProp$m(_this, "messageBoxButton", _descriptor4$h, _this), _this.previewButton = { // TODO: This is currently not restyled.
               // We might not want to use it because previewButton is bad practice
               height: "30px",
               width: "30px",
@@ -28535,11 +28773,11 @@ var Bundle = (function (exports) {
               padding: "5px 10px",
               textTransform: "uppercase",
               marginTop: "15px"
-          }, _initDefineProp$n(_this, "messageTimeStampHr", _descriptor5$g, _this), _initDefineProp$n(_this, "messageTimeStamp", _descriptor6$d, _this), _initDefineProp$n(_this, "groupChatMessage", _descriptor7$b, _this), _initDefineProp$n(_this, "comment", _descriptor8$7, _this), _initDefineProp$n(_this, "userHandle", _descriptor9$6, _this), _initDefineProp$n(_this, "commentContent", _descriptor10$5, _this), _initDefineProp$n(_this, "timestamp", _descriptor11$5, _this), _temp), possibleConstructorReturn(_this, _ret);
+          }, _initDefineProp$m(_this, "messageTimeStampHr", _descriptor5$f, _this), _initDefineProp$m(_this, "messageTimeStamp", _descriptor6$c, _this), _initDefineProp$m(_this, "groupChatMessage", _descriptor7$a, _this), _initDefineProp$m(_this, "comment", _descriptor8$8, _this), _initDefineProp$m(_this, "userHandle", _descriptor9$7, _this), _initDefineProp$m(_this, "commentContent", _descriptor10$6, _this), _initDefineProp$m(_this, "timestamp", _descriptor11$6, _this), _temp), possibleConstructorReturn(_this, _ret);
       }
 
       return ChatStyle;
-  }(StyleSheet), (_descriptor$m = _applyDecoratedDescriptor$n(_class$O.prototype, "renderMessageView", [styleRule], {
+  }(StyleSheet), (_descriptor$l = _applyDecoratedDescriptor$m(_class$N.prototype, "renderMessageView", [styleRule], {
       enumerable: true,
       initializer: function initializer() {
           return {
@@ -28552,7 +28790,7 @@ var Bundle = (function (exports) {
               wordBreak: "break-word"
           };
       }
-  }), _descriptor2$k = _applyDecoratedDescriptor$n(_class$O.prototype, "renderMessage", [styleRule], {
+  }), _descriptor2$j = _applyDecoratedDescriptor$m(_class$N.prototype, "renderMessage", [styleRule], {
       enumerable: true,
       initializer: function initializer() {
           return {
@@ -28564,7 +28802,7 @@ var Bundle = (function (exports) {
               position: "relative"
           };
       }
-  }), _descriptor3$k = _applyDecoratedDescriptor$n(_class$O.prototype, "chatInput", [styleRule], {
+  }), _descriptor3$j = _applyDecoratedDescriptor$m(_class$N.prototype, "chatInput", [styleRule], {
       enumerable: true,
       initializer: function initializer() {
           var _ref2;
@@ -28587,7 +28825,7 @@ var Bundle = (function (exports) {
               boxShadow: "none"
           }), _ref2;
       }
-  }), _descriptor4$i = _applyDecoratedDescriptor$n(_class$O.prototype, "messageBoxButton", [styleRule], {
+  }), _descriptor4$h = _applyDecoratedDescriptor$m(_class$N.prototype, "messageBoxButton", [styleRule], {
       enumerable: true,
       initializer: function initializer() {
           return {
@@ -28625,7 +28863,7 @@ var Bundle = (function (exports) {
               }
           };
       }
-  }), _descriptor5$g = _applyDecoratedDescriptor$n(_class$O.prototype, "messageTimeStampHr", [styleRule], {
+  }), _descriptor5$f = _applyDecoratedDescriptor$m(_class$N.prototype, "messageTimeStampHr", [styleRule], {
       enumerable: true,
       initializer: function initializer() {
           return {
@@ -28641,7 +28879,7 @@ var Bundle = (function (exports) {
               textTransform: "uppercase"
           };
       }
-  }), _descriptor6$d = _applyDecoratedDescriptor$n(_class$O.prototype, "messageTimeStamp", [styleRule], {
+  }), _descriptor6$c = _applyDecoratedDescriptor$m(_class$N.prototype, "messageTimeStamp", [styleRule], {
       enumerable: true,
       initializer: function initializer() {
           return {
@@ -28655,7 +28893,7 @@ var Bundle = (function (exports) {
               fontWeight: "bold"
           };
       }
-  }), _descriptor7$b = _applyDecoratedDescriptor$n(_class$O.prototype, "groupChatMessage", [styleRule], {
+  }), _descriptor7$a = _applyDecoratedDescriptor$m(_class$N.prototype, "groupChatMessage", [styleRule], {
       enumerable: true,
       initializer: function initializer() {
           return {
@@ -28663,7 +28901,7 @@ var Bundle = (function (exports) {
               backgroundColor: "#fff"
           };
       }
-  }), _descriptor8$7 = _applyDecoratedDescriptor$n(_class$O.prototype, "comment", [styleRule], {
+  }), _descriptor8$8 = _applyDecoratedDescriptor$m(_class$N.prototype, "comment", [styleRule], {
       enumerable: true,
       initializer: function initializer() {
           return {
@@ -28676,14 +28914,14 @@ var Bundle = (function (exports) {
               }
           };
       }
-  }), _descriptor9$6 = _applyDecoratedDescriptor$n(_class$O.prototype, "userHandle", [styleRule], {
+  }), _descriptor9$7 = _applyDecoratedDescriptor$m(_class$N.prototype, "userHandle", [styleRule], {
       enumerable: true,
       initializer: function initializer() {
           return {
               fontSize: this.userFontSize
           };
       }
-  }), _descriptor10$5 = _applyDecoratedDescriptor$n(_class$O.prototype, "commentContent", [styleRule], {
+  }), _descriptor10$6 = _applyDecoratedDescriptor$m(_class$N.prototype, "commentContent", [styleRule], {
       enumerable: true,
       initializer: function initializer() {
           return {
@@ -28697,7 +28935,7 @@ var Bundle = (function (exports) {
               }
           };
       }
-  }), _descriptor11$5 = _applyDecoratedDescriptor$n(_class$O.prototype, "timestamp", [styleRule], {
+  }), _descriptor11$6 = _applyDecoratedDescriptor$m(_class$N.prototype, "timestamp", [styleRule], {
       enumerable: true,
       initializer: function initializer() {
           return {
@@ -28706,7 +28944,7 @@ var Bundle = (function (exports) {
               margin: "0 10px"
           };
       }
-  })), _class$O);
+  })), _class$N);
 
   // Plugins should be used to extends on runtime the functionality of a class, to easily split functionality
 
@@ -28799,7 +29037,7 @@ var Bundle = (function (exports) {
       }(BaseClass);
   };
 
-  var _dec$p, _class$P, _dec2$a, _class2$a;
+  var _dec$o, _class$O, _dec2$a, _class2$a;
 
   ButtonStyle.getInstance().ensureFirstUpdate();
   InputStyle.getInstance().ensureFirstUpdate();
@@ -28993,7 +29231,7 @@ var Bundle = (function (exports) {
       return EditableMessage;
   }(UI.Element);
 
-  var GroupChatMessage = (_dec$p = registerStyle(ChatStyle), _dec$p(_class$P = function (_EditableMessage) {
+  var GroupChatMessage = (_dec$o = registerStyle(ChatStyle), _dec$o(_class$O = function (_EditableMessage) {
       inherits(GroupChatMessage, _EditableMessage);
 
       function GroupChatMessage() {
@@ -29099,7 +29337,7 @@ var Bundle = (function (exports) {
           }
       }]);
       return GroupChatMessage;
-  }(EditableMessage)) || _class$P);
+  }(EditableMessage)) || _class$O);
   var PrivateChatMessage = (_dec2$a = registerStyle(ChatStyle), _dec2$a(_class2$a = function (_Panel) {
       inherits(PrivateChatMessage, _Panel);
 
@@ -29809,9 +30047,9 @@ var Bundle = (function (exports) {
       return VotableGroupChatWidget;
   }(ChatWidget(VotableChatMessage));
 
-  var _class$Q, _descriptor$n, _descriptor2$l;
+  var _class$P, _descriptor$m, _descriptor2$k;
 
-  function _initDefineProp$o(target, property, descriptor, context) {
+  function _initDefineProp$n(target, property, descriptor, context) {
       if (!descriptor) return;
       Object.defineProperty(target, property, {
           enumerable: descriptor.enumerable,
@@ -29821,7 +30059,7 @@ var Bundle = (function (exports) {
       });
   }
 
-  function _applyDecoratedDescriptor$o(target, property, decorators, descriptor, context) {
+  function _applyDecoratedDescriptor$n(target, property, decorators, descriptor, context) {
       var desc = {};
       Object['ke' + 'ys'](descriptor).forEach(function (key) {
           desc[key] = descriptor[key];
@@ -29850,7 +30088,7 @@ var Bundle = (function (exports) {
       return desc;
   }
 
-  var CommentWidgetStyle = (_class$Q = function (_StyleSheet) {
+  var CommentWidgetStyle = (_class$P = function (_StyleSheet) {
       inherits(CommentWidgetStyle, _StyleSheet);
 
       function CommentWidgetStyle() {
@@ -29874,7 +30112,7 @@ var Bundle = (function (exports) {
           }, _this.writingSectionStyle = {
               height: "auto",
               marginTop: "10px"
-          }, _initDefineProp$o(_this, "chatInputStyle", _descriptor$n, _this), _initDefineProp$o(_this, "chatInputMax", _descriptor2$l, _this), _this.previewButtonStyle = { // TODO: This is currently not restyled. We might not want to use it because previewButton is bad practice
+          }, _initDefineProp$n(_this, "chatInputStyle", _descriptor$m, _this), _initDefineProp$n(_this, "chatInputMax", _descriptor2$k, _this), _this.previewButtonStyle = { // TODO: This is currently not restyled. We might not want to use it because previewButton is bad practice
               height: "30px",
               width: "auto",
               fontSize: "100%",
@@ -29883,7 +30121,7 @@ var Bundle = (function (exports) {
       }
 
       return CommentWidgetStyle;
-  }(StyleSheet), (_descriptor$n = _applyDecoratedDescriptor$o(_class$Q.prototype, "chatInputStyle", [styleRule], {
+  }(StyleSheet), (_descriptor$m = _applyDecoratedDescriptor$n(_class$P.prototype, "chatInputStyle", [styleRule], {
       enumerable: true,
       initializer: function initializer() {
           return {
@@ -29909,16 +30147,16 @@ var Bundle = (function (exports) {
               }
           };
       }
-  }), _descriptor2$l = _applyDecoratedDescriptor$o(_class$Q.prototype, "chatInputMax", [styleRule], {
+  }), _descriptor2$k = _applyDecoratedDescriptor$n(_class$P.prototype, "chatInputMax", [styleRule], {
       enumerable: true,
       initializer: function initializer() {
           return {
               height: "120px"
           };
       }
-  })), _class$Q);
+  })), _class$P);
 
-  var _dec$q, _class$R, _dec2$b, _class2$b;
+  var _dec$p, _class$Q, _dec2$b, _class2$b;
 
   var ThreadMessage = function (_EditableMessage) {
       inherits(ThreadMessage, _EditableMessage);
@@ -30034,7 +30272,7 @@ var Bundle = (function (exports) {
       return ToggleLogin;
   }(UI.Primitive("span"));
 
-  var BlogCommentWidget = (_dec$q = registerStyle(BlogStyle), _dec$q(_class$R = function (_ChatWidget) {
+  var BlogCommentWidget = (_dec$p = registerStyle(BlogStyle), _dec$p(_class$Q = function (_ChatWidget) {
       inherits(BlogCommentWidget, _ChatWidget);
 
       function BlogCommentWidget() {
@@ -30127,7 +30365,7 @@ var Bundle = (function (exports) {
           }
       }]);
       return BlogCommentWidget;
-  }(ChatWidget(ThreadMessage))) || _class$R);
+  }(ChatWidget(ThreadMessage))) || _class$Q);
   var CommentWidget = (_dec2$b = registerStyle(BlogStyle), _dec2$b(_class2$b = function (_BlogCommentWidget) {
       inherits(CommentWidget, _BlogCommentWidget);
 
@@ -30261,9 +30499,9 @@ var Bundle = (function (exports) {
       return AsyncCommentThread;
   }(UI.Element);
 
-  var _class$S, _descriptor$o, _descriptor2$m, _dec$r, _class3$g;
+  var _class$R, _descriptor$n, _descriptor2$l, _dec$q, _class3$f;
 
-  function _initDefineProp$p(target, property, descriptor, context) {
+  function _initDefineProp$o(target, property, descriptor, context) {
       if (!descriptor) return;
       Object.defineProperty(target, property, {
           enumerable: descriptor.enumerable,
@@ -30273,7 +30511,7 @@ var Bundle = (function (exports) {
       });
   }
 
-  function _applyDecoratedDescriptor$p(target, property, decorators, descriptor, context) {
+  function _applyDecoratedDescriptor$o(target, property, decorators, descriptor, context) {
       var desc = {};
       Object['ke' + 'ys'](descriptor).forEach(function (key) {
           desc[key] = descriptor[key];
@@ -30328,7 +30566,7 @@ var Bundle = (function (exports) {
       return UI.createElement("div", { style: getCircleStyle(size, borderSize, color, animationName, animationDuration) });
   }
 
-  var RotatingHelperStyle = (_class$S = function (_StyleSheet) {
+  var RotatingHelperStyle = (_class$R = function (_StyleSheet) {
       inherits(RotatingHelperStyle, _StyleSheet);
 
       function RotatingHelperStyle() {
@@ -30342,11 +30580,11 @@ var Bundle = (function (exports) {
               args[_key] = arguments[_key];
           }
 
-          return _ret = (_temp = (_this = possibleConstructorReturn(this, (_ref = RotatingHelperStyle.__proto__ || Object.getPrototypeOf(RotatingHelperStyle)).call.apply(_ref, [this].concat(args))), _this), _initDefineProp$p(_this, "rotateClockwise", _descriptor$o, _this), _initDefineProp$p(_this, "rotateCounterclockwise", _descriptor2$m, _this), _temp), possibleConstructorReturn(_this, _ret);
+          return _ret = (_temp = (_this = possibleConstructorReturn(this, (_ref = RotatingHelperStyle.__proto__ || Object.getPrototypeOf(RotatingHelperStyle)).call.apply(_ref, [this].concat(args))), _this), _initDefineProp$o(_this, "rotateClockwise", _descriptor$n, _this), _initDefineProp$o(_this, "rotateCounterclockwise", _descriptor2$l, _this), _temp), possibleConstructorReturn(_this, _ret);
       }
 
       return RotatingHelperStyle;
-  }(StyleSheet), (_descriptor$o = _applyDecoratedDescriptor$p(_class$S.prototype, "rotateClockwise", [keyframesRule], {
+  }(StyleSheet), (_descriptor$n = _applyDecoratedDescriptor$o(_class$R.prototype, "rotateClockwise", [keyframesRule], {
       enumerable: true,
       initializer: function initializer() {
           return {
@@ -30358,7 +30596,7 @@ var Bundle = (function (exports) {
               }
           };
       }
-  }), _descriptor2$m = _applyDecoratedDescriptor$p(_class$S.prototype, "rotateCounterclockwise", [keyframesRule], {
+  }), _descriptor2$l = _applyDecoratedDescriptor$o(_class$R.prototype, "rotateCounterclockwise", [keyframesRule], {
       enumerable: true,
       initializer: function initializer() {
           return {
@@ -30370,8 +30608,8 @@ var Bundle = (function (exports) {
               }
           };
       }
-  })), _class$S);
-  var ConcentricCirclesLoadingScreen = (_dec$r = registerStyle(RotatingHelperStyle), _dec$r(_class3$g = function (_UI$Element) {
+  })), _class$R);
+  var ConcentricCirclesLoadingScreen = (_dec$q = registerStyle(RotatingHelperStyle), _dec$q(_class3$f = function (_UI$Element) {
       inherits(ConcentricCirclesLoadingScreen, _UI$Element);
 
       function ConcentricCirclesLoadingScreen() {
@@ -30401,7 +30639,7 @@ var Bundle = (function (exports) {
           }
       }]);
       return ConcentricCirclesLoadingScreen;
-  }(UI.Element)) || _class3$g);
+  }(UI.Element)) || _class3$f);
 
   var DelayedElement = function DelayedElement(BaseClass) {
       return function (_BaseClass) {
@@ -31538,9 +31776,9 @@ var Bundle = (function (exports) {
 
   var DeleteThreadReplyButton = ActionModalButton(DeleteThreadReplyModal);
 
-  var _class$T, _descriptor$p, _descriptor2$n, _descriptor3$l, _descriptor4$j, _descriptor5$h, _class3$h, _descriptor6$e, _descriptor7$c, _descriptor8$8, _descriptor9$7, _descriptor10$6, _descriptor11$6, _descriptor12$5, _descriptor13$5, _descriptor14$5, _descriptor15$5, _descriptor16$5, _descriptor17$5, _descriptor18$3, _descriptor19$3, _descriptor20$3, _descriptor21$2, _descriptor22$1, _descriptor23$1, _descriptor24, _class5$6, _descriptor25, _class7$6, _descriptor26, _descriptor27, _descriptor28, _descriptor29, _descriptor30, _descriptor31, _descriptor32, _class9$2, _descriptor33, _class11, _descriptor34, _descriptor35, _descriptor36, _descriptor37, _descriptor38, _descriptor39, _descriptor40, _descriptor41, _descriptor42, _descriptor43, _descriptor44, _descriptor45, _descriptor46, _descriptor47, _class13, _descriptor48, _descriptor49, _descriptor50, _descriptor51, _descriptor52;
+  var _class$S, _descriptor$o, _descriptor2$m, _descriptor3$k, _descriptor4$i, _descriptor5$g, _class3$g, _descriptor6$d, _descriptor7$b, _descriptor8$9, _descriptor9$8, _descriptor10$7, _descriptor11$7, _descriptor12$6, _descriptor13$6, _descriptor14$5, _descriptor15$5, _descriptor16$5, _descriptor17$5, _descriptor18$3, _descriptor19$3, _descriptor20$3, _descriptor21$2, _descriptor22$1, _descriptor23$1, _descriptor24, _class5$6, _descriptor25, _class7$6, _descriptor26, _descriptor27, _descriptor28, _descriptor29, _descriptor30, _descriptor31, _descriptor32, _class9$2, _descriptor33, _class11, _descriptor34, _descriptor35, _descriptor36, _descriptor37, _descriptor38, _descriptor39, _descriptor40, _descriptor41, _descriptor42, _descriptor43, _descriptor44, _descriptor45, _descriptor46, _descriptor47, _class13, _descriptor48, _descriptor49, _descriptor50, _descriptor51, _descriptor52;
 
-  function _initDefineProp$q(target, property, descriptor, context) {
+  function _initDefineProp$p(target, property, descriptor, context) {
       if (!descriptor) return;
       Object.defineProperty(target, property, {
           enumerable: descriptor.enumerable,
@@ -31550,7 +31788,7 @@ var Bundle = (function (exports) {
       });
   }
 
-  function _applyDecoratedDescriptor$q(target, property, decorators, descriptor, context) {
+  function _applyDecoratedDescriptor$p(target, property, decorators, descriptor, context) {
       var desc = {};
       Object['ke' + 'ys'](descriptor).forEach(function (key) {
           desc[key] = descriptor[key];
@@ -31591,7 +31829,7 @@ var Bundle = (function (exports) {
       WHITE: "#eee"
   };
 
-  var ForumThreadReplyStyle = (_class$T = function (_StyleSheet) {
+  var ForumThreadReplyStyle = (_class$S = function (_StyleSheet) {
       inherits(ForumThreadReplyStyle, _StyleSheet);
 
       function ForumThreadReplyStyle() {
@@ -31605,11 +31843,11 @@ var Bundle = (function (exports) {
               args[_key] = arguments[_key];
           }
 
-          return _ret = (_temp = (_this = possibleConstructorReturn(this, (_ref = ForumThreadReplyStyle.__proto__ || Object.getPrototypeOf(ForumThreadReplyStyle)).call.apply(_ref, [this].concat(args))), _this), _initDefineProp$q(_this, "mainClass", _descriptor$p, _this), _initDefineProp$q(_this, "repliesUserAndDate", _descriptor2$n, _this), _initDefineProp$q(_this, "repliesUser", _descriptor3$l, _this), _initDefineProp$q(_this, "repliesDate", _descriptor4$j, _this), _initDefineProp$q(_this, "repliesContent", _descriptor5$h, _this), _temp), possibleConstructorReturn(_this, _ret);
+          return _ret = (_temp = (_this = possibleConstructorReturn(this, (_ref = ForumThreadReplyStyle.__proto__ || Object.getPrototypeOf(ForumThreadReplyStyle)).call.apply(_ref, [this].concat(args))), _this), _initDefineProp$p(_this, "mainClass", _descriptor$o, _this), _initDefineProp$p(_this, "repliesUserAndDate", _descriptor2$m, _this), _initDefineProp$p(_this, "repliesUser", _descriptor3$k, _this), _initDefineProp$p(_this, "repliesDate", _descriptor4$i, _this), _initDefineProp$p(_this, "repliesContent", _descriptor5$g, _this), _temp), possibleConstructorReturn(_this, _ret);
       }
 
       return ForumThreadReplyStyle;
-  }(StyleSheet), (_descriptor$p = _applyDecoratedDescriptor$q(_class$T.prototype, "mainClass", [styleRule], {
+  }(StyleSheet), (_descriptor$o = _applyDecoratedDescriptor$p(_class$S.prototype, "mainClass", [styleRule], {
       enumerable: true,
       initializer: function initializer() {
           return {
@@ -31618,7 +31856,7 @@ var Bundle = (function (exports) {
               maxWidth: "1200px"
           };
       }
-  }), _descriptor2$n = _applyDecoratedDescriptor$q(_class$T.prototype, "repliesUserAndDate", [styleRule], {
+  }), _descriptor2$m = _applyDecoratedDescriptor$p(_class$S.prototype, "repliesUserAndDate", [styleRule], {
       enumerable: true,
       initializer: function initializer() {
           return {
@@ -31630,7 +31868,7 @@ var Bundle = (function (exports) {
               marginBottom: "8px"
           };
       }
-  }), _descriptor3$l = _applyDecoratedDescriptor$q(_class$T.prototype, "repliesUser", [styleRule], {
+  }), _descriptor3$k = _applyDecoratedDescriptor$p(_class$S.prototype, "repliesUser", [styleRule], {
       enumerable: true,
       initializer: function initializer() {
           return {
@@ -31640,7 +31878,7 @@ var Bundle = (function (exports) {
               fontSize: "14px"
           };
       }
-  }), _descriptor4$j = _applyDecoratedDescriptor$q(_class$T.prototype, "repliesDate", [styleRule], {
+  }), _descriptor4$i = _applyDecoratedDescriptor$p(_class$S.prototype, "repliesDate", [styleRule], {
       enumerable: true,
       initializer: function initializer() {
           return {
@@ -31648,7 +31886,7 @@ var Bundle = (function (exports) {
               float: "right"
           };
       }
-  }), _descriptor5$h = _applyDecoratedDescriptor$q(_class$T.prototype, "repliesContent", [styleRule], {
+  }), _descriptor5$g = _applyDecoratedDescriptor$p(_class$S.prototype, "repliesContent", [styleRule], {
       enumerable: true,
       initializer: function initializer() {
           return {
@@ -31656,9 +31894,9 @@ var Bundle = (function (exports) {
               fontSize: "16px"
           };
       }
-  })), _class$T);
+  })), _class$S);
 
-  var ForumThreadPanelStyle = (_class3$h = function (_StyleSheet2) {
+  var ForumThreadPanelStyle = (_class3$g = function (_StyleSheet2) {
       inherits(ForumThreadPanelStyle, _StyleSheet2);
 
       function ForumThreadPanelStyle() {
@@ -31672,11 +31910,11 @@ var Bundle = (function (exports) {
               args[_key2] = arguments[_key2];
           }
 
-          return _ret2 = (_temp2 = (_this2 = possibleConstructorReturn(this, (_ref2 = ForumThreadPanelStyle.__proto__ || Object.getPrototypeOf(ForumThreadPanelStyle)).call.apply(_ref2, [this].concat(args))), _this2), _this2.fontSize = "0.9em", _this2.numRepliesFontSize = "1.03em", _this2.messageFontSize = "1.2em", _this2.buttonFontSize = "1em", _initDefineProp$q(_this2, "mainClass", _descriptor6$e, _this2), _initDefineProp$q(_this2, "title", _descriptor7$c, _this2), _initDefineProp$q(_this2, "backButton", _descriptor8$8, _this2), _initDefineProp$q(_this2, "replyButtonDiv", _descriptor9$7, _this2), _initDefineProp$q(_this2, "replyButton", _descriptor10$6, _this2), _initDefineProp$q(_this2, "fullPost", _descriptor11$6, _this2), _initDefineProp$q(_this2, "dislikeButton", _descriptor12$5, _this2), _initDefineProp$q(_this2, "likeButton", _descriptor13$5, _this2), _initDefineProp$q(_this2, "author", _descriptor14$5, _this2), _initDefineProp$q(_this2, "header", _descriptor15$5, _this2), _initDefineProp$q(_this2, "message", _descriptor16$5, _this2), _initDefineProp$q(_this2, "buttons", _descriptor17$5, _this2), _initDefineProp$q(_this2, "bottomPanel", _descriptor18$3, _this2), _initDefineProp$q(_this2, "voting", _descriptor19$3, _this2), _initDefineProp$q(_this2, "numReplies", _descriptor20$3, _this2), _initDefineProp$q(_this2, "replies", _descriptor21$2, _this2), _initDefineProp$q(_this2, "editDeleteButtons", _descriptor22$1, _this2), _initDefineProp$q(_this2, "editButton", _descriptor23$1, _this2), _initDefineProp$q(_this2, "deleteButton", _descriptor24, _this2), _temp2), possibleConstructorReturn(_this2, _ret2);
+          return _ret2 = (_temp2 = (_this2 = possibleConstructorReturn(this, (_ref2 = ForumThreadPanelStyle.__proto__ || Object.getPrototypeOf(ForumThreadPanelStyle)).call.apply(_ref2, [this].concat(args))), _this2), _this2.fontSize = "0.9em", _this2.numRepliesFontSize = "1.03em", _this2.messageFontSize = "1.2em", _this2.buttonFontSize = "1em", _initDefineProp$p(_this2, "mainClass", _descriptor6$d, _this2), _initDefineProp$p(_this2, "title", _descriptor7$b, _this2), _initDefineProp$p(_this2, "backButton", _descriptor8$9, _this2), _initDefineProp$p(_this2, "replyButtonDiv", _descriptor9$8, _this2), _initDefineProp$p(_this2, "replyButton", _descriptor10$7, _this2), _initDefineProp$p(_this2, "fullPost", _descriptor11$7, _this2), _initDefineProp$p(_this2, "dislikeButton", _descriptor12$6, _this2), _initDefineProp$p(_this2, "likeButton", _descriptor13$6, _this2), _initDefineProp$p(_this2, "author", _descriptor14$5, _this2), _initDefineProp$p(_this2, "header", _descriptor15$5, _this2), _initDefineProp$p(_this2, "message", _descriptor16$5, _this2), _initDefineProp$p(_this2, "buttons", _descriptor17$5, _this2), _initDefineProp$p(_this2, "bottomPanel", _descriptor18$3, _this2), _initDefineProp$p(_this2, "voting", _descriptor19$3, _this2), _initDefineProp$p(_this2, "numReplies", _descriptor20$3, _this2), _initDefineProp$p(_this2, "replies", _descriptor21$2, _this2), _initDefineProp$p(_this2, "editDeleteButtons", _descriptor22$1, _this2), _initDefineProp$p(_this2, "editButton", _descriptor23$1, _this2), _initDefineProp$p(_this2, "deleteButton", _descriptor24, _this2), _temp2), possibleConstructorReturn(_this2, _ret2);
       }
 
       return ForumThreadPanelStyle;
-  }(StyleSheet), (_descriptor6$e = _applyDecoratedDescriptor$q(_class3$h.prototype, "mainClass", [styleRule], {
+  }(StyleSheet), (_descriptor6$d = _applyDecoratedDescriptor$p(_class3$g.prototype, "mainClass", [styleRule], {
       enumerable: true,
       initializer: function initializer() {
           return {
@@ -31685,7 +31923,7 @@ var Bundle = (function (exports) {
               width: "100%"
           };
       }
-  }), _descriptor7$c = _applyDecoratedDescriptor$q(_class3$h.prototype, "title", [styleRule], {
+  }), _descriptor7$b = _applyDecoratedDescriptor$p(_class3$g.prototype, "title", [styleRule], {
       enumerable: true,
       initializer: function initializer() {
           return {
@@ -31700,7 +31938,7 @@ var Bundle = (function (exports) {
               alignItems: "center"
           };
       }
-  }), _descriptor8$8 = _applyDecoratedDescriptor$q(_class3$h.prototype, "backButton", [styleRule], {
+  }), _descriptor8$9 = _applyDecoratedDescriptor$p(_class3$g.prototype, "backButton", [styleRule], {
       enumerable: true,
       initializer: function initializer() {
           return {
@@ -31716,7 +31954,7 @@ var Bundle = (function (exports) {
               }
           };
       }
-  }), _descriptor9$7 = _applyDecoratedDescriptor$q(_class3$h.prototype, "replyButtonDiv", [styleRule], {
+  }), _descriptor9$8 = _applyDecoratedDescriptor$p(_class3$g.prototype, "replyButtonDiv", [styleRule], {
       enumerable: true,
       initializer: function initializer() {
           return {
@@ -31729,14 +31967,14 @@ var Bundle = (function (exports) {
               margin: "0 auto"
           };
       }
-  }), _descriptor10$6 = _applyDecoratedDescriptor$q(_class3$h.prototype, "replyButton", [styleRule], {
+  }), _descriptor10$7 = _applyDecoratedDescriptor$p(_class3$g.prototype, "replyButton", [styleRule], {
       enumerable: true,
       initializer: function initializer() {
           return {
               margin: "0"
           };
       }
-  }), _descriptor11$6 = _applyDecoratedDescriptor$q(_class3$h.prototype, "fullPost", [styleRule], {
+  }), _descriptor11$7 = _applyDecoratedDescriptor$p(_class3$g.prototype, "fullPost", [styleRule], {
       enumerable: true,
       initializer: function initializer() {
           return {
@@ -31748,7 +31986,7 @@ var Bundle = (function (exports) {
               borderTop: "0"
           };
       }
-  }), _descriptor12$5 = _applyDecoratedDescriptor$q(_class3$h.prototype, "dislikeButton", [styleRule], {
+  }), _descriptor12$6 = _applyDecoratedDescriptor$p(_class3$g.prototype, "dislikeButton", [styleRule], {
       enumerable: true,
       initializer: function initializer() {
           return {
@@ -31757,7 +31995,7 @@ var Bundle = (function (exports) {
               marginRight: "16px"
           };
       }
-  }), _descriptor13$5 = _applyDecoratedDescriptor$q(_class3$h.prototype, "likeButton", [styleRule], {
+  }), _descriptor13$6 = _applyDecoratedDescriptor$p(_class3$g.prototype, "likeButton", [styleRule], {
       enumerable: true,
       initializer: function initializer() {
           return {
@@ -31766,7 +32004,7 @@ var Bundle = (function (exports) {
               marginRight: "8px"
           };
       }
-  }), _descriptor14$5 = _applyDecoratedDescriptor$q(_class3$h.prototype, "author", [styleRule], {
+  }), _descriptor14$5 = _applyDecoratedDescriptor$p(_class3$g.prototype, "author", [styleRule], {
       enumerable: true,
       initializer: function initializer() {
           return {
@@ -31781,12 +32019,12 @@ var Bundle = (function (exports) {
               // fontWeight: "bold",
           };
       }
-  }), _descriptor15$5 = _applyDecoratedDescriptor$q(_class3$h.prototype, "header", [styleRule], {
+  }), _descriptor15$5 = _applyDecoratedDescriptor$p(_class3$g.prototype, "header", [styleRule], {
       enumerable: true,
       initializer: function initializer() {
           return {};
       }
-  }), _descriptor16$5 = _applyDecoratedDescriptor$q(_class3$h.prototype, "message", [styleRule], {
+  }), _descriptor16$5 = _applyDecoratedDescriptor$p(_class3$g.prototype, "message", [styleRule], {
       enumerable: true,
       initializer: function initializer() {
           return {
@@ -31799,7 +32037,7 @@ var Bundle = (function (exports) {
               }
           };
       }
-  }), _descriptor17$5 = _applyDecoratedDescriptor$q(_class3$h.prototype, "buttons", [styleRule], {
+  }), _descriptor17$5 = _applyDecoratedDescriptor$p(_class3$g.prototype, "buttons", [styleRule], {
       enumerable: true,
       initializer: function initializer() {
           return {
@@ -31808,7 +32046,7 @@ var Bundle = (function (exports) {
               paddingTop: "12px"
           };
       }
-  }), _descriptor18$3 = _applyDecoratedDescriptor$q(_class3$h.prototype, "bottomPanel", [styleRule], {
+  }), _descriptor18$3 = _applyDecoratedDescriptor$p(_class3$g.prototype, "bottomPanel", [styleRule], {
       enumerable: true,
       initializer: function initializer() {
           return {
@@ -31819,14 +32057,14 @@ var Bundle = (function (exports) {
               justifyContent: "space-between"
           };
       }
-  }), _descriptor19$3 = _applyDecoratedDescriptor$q(_class3$h.prototype, "voting", [styleRule], {
+  }), _descriptor19$3 = _applyDecoratedDescriptor$p(_class3$g.prototype, "voting", [styleRule], {
       enumerable: true,
       initializer: function initializer() {
           return {
               paddingRight: "12px"
           };
       }
-  }), _descriptor20$3 = _applyDecoratedDescriptor$q(_class3$h.prototype, "numReplies", [styleRule], {
+  }), _descriptor20$3 = _applyDecoratedDescriptor$p(_class3$g.prototype, "numReplies", [styleRule], {
       enumerable: true,
       initializer: function initializer() {
           return {
@@ -31840,7 +32078,7 @@ var Bundle = (function (exports) {
               textTransform: "uppercase"
           };
       }
-  }), _descriptor21$2 = _applyDecoratedDescriptor$q(_class3$h.prototype, "replies", [styleRule], {
+  }), _descriptor21$2 = _applyDecoratedDescriptor$p(_class3$g.prototype, "replies", [styleRule], {
       enumerable: true,
       initializer: function initializer() {
           return {
@@ -31848,7 +32086,7 @@ var Bundle = (function (exports) {
               color: "#444"
           };
       }
-  }), _descriptor22$1 = _applyDecoratedDescriptor$q(_class3$h.prototype, "editDeleteButtons", [styleRule], {
+  }), _descriptor22$1 = _applyDecoratedDescriptor$p(_class3$g.prototype, "editDeleteButtons", [styleRule], {
       enumerable: true,
       initializer: function initializer() {
           return {
@@ -31860,7 +32098,7 @@ var Bundle = (function (exports) {
               justifyContent: "flex-start"
           };
       }
-  }), _descriptor23$1 = _applyDecoratedDescriptor$q(_class3$h.prototype, "editButton", [styleRule], {
+  }), _descriptor23$1 = _applyDecoratedDescriptor$p(_class3$g.prototype, "editButton", [styleRule], {
       enumerable: true,
       initializer: function initializer() {
           return {
@@ -31882,7 +32120,7 @@ var Bundle = (function (exports) {
               }
           };
       }
-  }), _descriptor24 = _applyDecoratedDescriptor$q(_class3$h.prototype, "deleteButton", [styleRule], {
+  }), _descriptor24 = _applyDecoratedDescriptor$p(_class3$g.prototype, "deleteButton", [styleRule], {
       enumerable: true,
       initializer: function initializer() {
           return {
@@ -31904,7 +32142,7 @@ var Bundle = (function (exports) {
               }
           };
       }
-  })), _class3$h);
+  })), _class3$g);
   var ButtonStyle$1 = (_class5$6 = function (_StyleSheet3) {
       inherits(ButtonStyle$$1, _StyleSheet3);
 
@@ -31919,11 +32157,11 @@ var Bundle = (function (exports) {
               args[_key3] = arguments[_key3];
           }
 
-          return _ret3 = (_temp3 = (_this3 = possibleConstructorReturn(this, (_ref3 = ButtonStyle$$1.__proto__ || Object.getPrototypeOf(ButtonStyle$$1)).call.apply(_ref3, [this].concat(args))), _this3), _initDefineProp$q(_this3, "button", _descriptor25, _this3), _temp3), possibleConstructorReturn(_this3, _ret3);
+          return _ret3 = (_temp3 = (_this3 = possibleConstructorReturn(this, (_ref3 = ButtonStyle$$1.__proto__ || Object.getPrototypeOf(ButtonStyle$$1)).call.apply(_ref3, [this].concat(args))), _this3), _initDefineProp$p(_this3, "button", _descriptor25, _this3), _temp3), possibleConstructorReturn(_this3, _ret3);
       }
 
       return ButtonStyle$$1;
-  }(StyleSheet), (_descriptor25 = _applyDecoratedDescriptor$q(_class5$6.prototype, "button", [styleRule], {
+  }(StyleSheet), (_descriptor25 = _applyDecoratedDescriptor$p(_class5$6.prototype, "button", [styleRule], {
       enumerable: true,
       initializer: function initializer() {
           var _ref4;
@@ -31981,19 +32219,19 @@ var Bundle = (function (exports) {
               fontWeight: "bold"
           };
 
-          _initDefineProp$q(_this4, "mainClass", _descriptor26, _this4);
+          _initDefineProp$p(_this4, "mainClass", _descriptor26, _this4);
 
-          _initDefineProp$q(_this4, "tagsTitle", _descriptor27, _this4);
+          _initDefineProp$p(_this4, "tagsTitle", _descriptor27, _this4);
 
-          _initDefineProp$q(_this4, "tagsAuthor", _descriptor28, _this4);
+          _initDefineProp$p(_this4, "tagsAuthor", _descriptor28, _this4);
 
-          _initDefineProp$q(_this4, "tagsReplies", _descriptor29, _this4);
+          _initDefineProp$p(_this4, "tagsReplies", _descriptor29, _this4);
 
-          _initDefineProp$q(_this4, "tagsViews", _descriptor30, _this4);
+          _initDefineProp$p(_this4, "tagsViews", _descriptor30, _this4);
 
-          _initDefineProp$q(_this4, "tagsVotes", _descriptor31, _this4);
+          _initDefineProp$p(_this4, "tagsVotes", _descriptor31, _this4);
 
-          _initDefineProp$q(_this4, "tagsActivity", _descriptor32, _this4);
+          _initDefineProp$p(_this4, "tagsActivity", _descriptor32, _this4);
 
           return _this4;
       }
@@ -32001,7 +32239,7 @@ var Bundle = (function (exports) {
 
 
       return ForumThreadHeaderStyle;
-  }(StyleSheet), (_descriptor26 = _applyDecoratedDescriptor$q(_class7$6.prototype, "mainClass", [styleRule], {
+  }(StyleSheet), (_descriptor26 = _applyDecoratedDescriptor$p(_class7$6.prototype, "mainClass", [styleRule], {
       enumerable: true,
       initializer: function initializer() {
           var _ref5;
@@ -32020,7 +32258,7 @@ var Bundle = (function (exports) {
               backgroundColor: "#eaeaea"
           }, defineProperty(_ref5, "height", this.tagsHeight + "px"), defineProperty(_ref5, "borderTop", "3px solid " + this.borderTopColor), _ref5;
       }
-  }), _descriptor27 = _applyDecoratedDescriptor$q(_class7$6.prototype, "tagsTitle", [styleRule], {
+  }), _descriptor27 = _applyDecoratedDescriptor$p(_class7$6.prototype, "tagsTitle", [styleRule], {
       enumerable: true,
       initializer: function initializer() {
           var _this5 = this;
@@ -32039,7 +32277,7 @@ var Bundle = (function (exports) {
               fontSize: this.fontSize
           }];
       }
-  }), _descriptor28 = _applyDecoratedDescriptor$q(_class7$6.prototype, "tagsAuthor", [styleRule], {
+  }), _descriptor28 = _applyDecoratedDescriptor$p(_class7$6.prototype, "tagsAuthor", [styleRule], {
       enumerable: true,
       initializer: function initializer() {
           return [this.baseStyleObject, {
@@ -32051,7 +32289,7 @@ var Bundle = (function (exports) {
               fontSize: this.fontSize
           }];
       }
-  }), _descriptor29 = _applyDecoratedDescriptor$q(_class7$6.prototype, "tagsReplies", [styleRule], {
+  }), _descriptor29 = _applyDecoratedDescriptor$p(_class7$6.prototype, "tagsReplies", [styleRule], {
       enumerable: true,
       initializer: function initializer() {
           var _ref6;
@@ -32061,7 +32299,7 @@ var Bundle = (function (exports) {
               paddingRight: "4px"
           }, defineProperty(_ref6, "paddingLeft", "4px"), defineProperty(_ref6, "paddingRight", "4px"), defineProperty(_ref6, "flex", ".5"), defineProperty(_ref6, "textAlign", "center"), defineProperty(_ref6, "fontSize", this.fontSize), _ref6)];
       }
-  }), _descriptor30 = _applyDecoratedDescriptor$q(_class7$6.prototype, "tagsViews", [styleRule], {
+  }), _descriptor30 = _applyDecoratedDescriptor$p(_class7$6.prototype, "tagsViews", [styleRule], {
       enumerable: true,
       initializer: function initializer() {
           var _this6 = this;
@@ -32082,7 +32320,7 @@ var Bundle = (function (exports) {
               }
           }];
       }
-  }), _descriptor31 = _applyDecoratedDescriptor$q(_class7$6.prototype, "tagsVotes", [styleRule], {
+  }), _descriptor31 = _applyDecoratedDescriptor$p(_class7$6.prototype, "tagsVotes", [styleRule], {
       enumerable: true,
       initializer: function initializer() {
           var _this7 = this;
@@ -32102,7 +32340,7 @@ var Bundle = (function (exports) {
               }
           }];
       }
-  }), _descriptor32 = _applyDecoratedDescriptor$q(_class7$6.prototype, "tagsActivity", [styleRule], {
+  }), _descriptor32 = _applyDecoratedDescriptor$p(_class7$6.prototype, "tagsActivity", [styleRule], {
       enumerable: true,
       initializer: function initializer() {
           return [this.baseStyleObject, {
@@ -32129,7 +32367,7 @@ var Bundle = (function (exports) {
               args[_key4] = arguments[_key4];
           }
 
-          return _ret4 = (_temp4 = (_this8 = possibleConstructorReturn(this, (_ref7 = ForumThreadPreviewStyle.__proto__ || Object.getPrototypeOf(ForumThreadPreviewStyle)).call.apply(_ref7, [this].concat(args))), _this8), _this8.maxHeight = 50, _this8.lines = 2, _this8.lineHeight = _this8.maxHeight / _this8.lines, _this8.fontSize = ".88em", _this8.color = "#aaa", _initDefineProp$q(_this8, "forumThreadPreview", _descriptor33, _this8), _temp4), possibleConstructorReturn(_this8, _ret4);
+          return _ret4 = (_temp4 = (_this8 = possibleConstructorReturn(this, (_ref7 = ForumThreadPreviewStyle.__proto__ || Object.getPrototypeOf(ForumThreadPreviewStyle)).call.apply(_ref7, [this].concat(args))), _this8), _this8.maxHeight = 50, _this8.lines = 2, _this8.lineHeight = _this8.maxHeight / _this8.lines, _this8.fontSize = ".88em", _this8.color = "#aaa", _initDefineProp$p(_this8, "forumThreadPreview", _descriptor33, _this8), _temp4), possibleConstructorReturn(_this8, _ret4);
       }
       // functionality
 
@@ -32138,7 +32376,7 @@ var Bundle = (function (exports) {
 
 
       return ForumThreadPreviewStyle;
-  }(StyleSheet), (_descriptor33 = _applyDecoratedDescriptor$q(_class9$2.prototype, "forumThreadPreview", [styleRule], {
+  }(StyleSheet), (_descriptor33 = _applyDecoratedDescriptor$p(_class9$2.prototype, "forumThreadPreview", [styleRule], {
       enumerable: true,
       initializer: function initializer() {
           return {
@@ -32172,39 +32410,39 @@ var Bundle = (function (exports) {
               fontSize: _this9.fontSize
           };
 
-          _initDefineProp$q(_this9, "backgroundColorOddInstances", _descriptor34, _this9);
+          _initDefineProp$p(_this9, "backgroundColorOddInstances", _descriptor34, _this9);
 
-          _initDefineProp$q(_this9, "backgroundColorPinnedInstances", _descriptor35, _this9);
+          _initDefineProp$p(_this9, "backgroundColorPinnedInstances", _descriptor35, _this9);
 
-          _initDefineProp$q(_this9, "backgroundColorEvenInstances", _descriptor36, _this9);
+          _initDefineProp$p(_this9, "backgroundColorEvenInstances", _descriptor36, _this9);
 
-          _initDefineProp$q(_this9, "mainClass", _descriptor37, _this9);
+          _initDefineProp$p(_this9, "mainClass", _descriptor37, _this9);
 
-          _initDefineProp$q(_this9, "threadTitleAndPreview", _descriptor38, _this9);
+          _initDefineProp$p(_this9, "threadTitleAndPreview", _descriptor38, _this9);
 
-          _initDefineProp$q(_this9, "threadTitle", _descriptor39, _this9);
+          _initDefineProp$p(_this9, "threadTitle", _descriptor39, _this9);
 
-          _initDefineProp$q(_this9, "pinnedIcon", _descriptor40, _this9);
+          _initDefineProp$p(_this9, "pinnedIcon", _descriptor40, _this9);
 
-          _initDefineProp$q(_this9, "threadTitleSpan", _descriptor41, _this9);
+          _initDefineProp$p(_this9, "threadTitleSpan", _descriptor41, _this9);
 
-          _initDefineProp$q(_this9, "threadAuthor", _descriptor42, _this9);
+          _initDefineProp$p(_this9, "threadAuthor", _descriptor42, _this9);
 
-          _initDefineProp$q(_this9, "threadReplies", _descriptor43, _this9);
+          _initDefineProp$p(_this9, "threadReplies", _descriptor43, _this9);
 
-          _initDefineProp$q(_this9, "threadRepliesSpan", _descriptor44, _this9);
+          _initDefineProp$p(_this9, "threadRepliesSpan", _descriptor44, _this9);
 
-          _initDefineProp$q(_this9, "threadViews", _descriptor45, _this9);
+          _initDefineProp$p(_this9, "threadViews", _descriptor45, _this9);
 
-          _initDefineProp$q(_this9, "threadVotes", _descriptor46, _this9);
+          _initDefineProp$p(_this9, "threadVotes", _descriptor46, _this9);
 
-          _initDefineProp$q(_this9, "threadActivity", _descriptor47, _this9);
+          _initDefineProp$p(_this9, "threadActivity", _descriptor47, _this9);
 
           return _this9;
       }
 
       return ForumThreadBubbleStyle;
-  }(StyleSheet), (_descriptor34 = _applyDecoratedDescriptor$q(_class11.prototype, "backgroundColorOddInstances", [styleRule], {
+  }(StyleSheet), (_descriptor34 = _applyDecoratedDescriptor$p(_class11.prototype, "backgroundColorOddInstances", [styleRule], {
       enumerable: true,
       initializer: function initializer() {
           return {
@@ -32214,7 +32452,7 @@ var Bundle = (function (exports) {
               }
           };
       }
-  }), _descriptor35 = _applyDecoratedDescriptor$q(_class11.prototype, "backgroundColorPinnedInstances", [styleRule], {
+  }), _descriptor35 = _applyDecoratedDescriptor$p(_class11.prototype, "backgroundColorPinnedInstances", [styleRule], {
       enumerable: true,
       initializer: function initializer() {
           return {
@@ -32224,7 +32462,7 @@ var Bundle = (function (exports) {
               }
           };
       }
-  }), _descriptor36 = _applyDecoratedDescriptor$q(_class11.prototype, "backgroundColorEvenInstances", [styleRule], {
+  }), _descriptor36 = _applyDecoratedDescriptor$p(_class11.prototype, "backgroundColorEvenInstances", [styleRule], {
       enumerable: true,
       initializer: function initializer() {
           return {
@@ -32234,7 +32472,7 @@ var Bundle = (function (exports) {
               }
           };
       }
-  }), _descriptor37 = _applyDecoratedDescriptor$q(_class11.prototype, "mainClass", [styleRule], {
+  }), _descriptor37 = _applyDecoratedDescriptor$p(_class11.prototype, "mainClass", [styleRule], {
       enumerable: true,
       initializer: function initializer() {
           return {
@@ -32248,7 +32486,7 @@ var Bundle = (function (exports) {
               display: "flex"
           };
       }
-  }), _descriptor38 = _applyDecoratedDescriptor$q(_class11.prototype, "threadTitleAndPreview", [styleRule], {
+  }), _descriptor38 = _applyDecoratedDescriptor$p(_class11.prototype, "threadTitleAndPreview", [styleRule], {
       enumerable: true,
       initializer: function initializer() {
           var _this10 = this;
@@ -32266,7 +32504,7 @@ var Bundle = (function (exports) {
               paddingLeft: "12px"
           };
       }
-  }), _descriptor39 = _applyDecoratedDescriptor$q(_class11.prototype, "threadTitle", [styleRule], {
+  }), _descriptor39 = _applyDecoratedDescriptor$p(_class11.prototype, "threadTitle", [styleRule], {
       enumerable: true,
       initializer: function initializer() {
           return [this.baseStyleObject, {
@@ -32282,7 +32520,7 @@ var Bundle = (function (exports) {
               paddingBottom: this.titlePaddingBottom
           }];
       }
-  }), _descriptor40 = _applyDecoratedDescriptor$q(_class11.prototype, "pinnedIcon", [styleRule], {
+  }), _descriptor40 = _applyDecoratedDescriptor$p(_class11.prototype, "pinnedIcon", [styleRule], {
       enumerable: true,
       initializer: function initializer() {
           return {
@@ -32294,7 +32532,7 @@ var Bundle = (function (exports) {
               paddingRight: "12px"
           };
       }
-  }), _descriptor41 = _applyDecoratedDescriptor$q(_class11.prototype, "threadTitleSpan", [styleRule], {
+  }), _descriptor41 = _applyDecoratedDescriptor$p(_class11.prototype, "threadTitleSpan", [styleRule], {
       enumerable: true,
       initializer: function initializer() {
           return {
@@ -32310,7 +32548,7 @@ var Bundle = (function (exports) {
               }
           };
       }
-  }), _descriptor42 = _applyDecoratedDescriptor$q(_class11.prototype, "threadAuthor", [styleRule], {
+  }), _descriptor42 = _applyDecoratedDescriptor$p(_class11.prototype, "threadAuthor", [styleRule], {
       enumerable: true,
       initializer: function initializer() {
           return [this.baseStyleObject, {
@@ -32326,7 +32564,7 @@ var Bundle = (function (exports) {
               paddingRight: "4px"
           }];
       }
-  }), _descriptor43 = _applyDecoratedDescriptor$q(_class11.prototype, "threadReplies", [styleRule], {
+  }), _descriptor43 = _applyDecoratedDescriptor$p(_class11.prototype, "threadReplies", [styleRule], {
       enumerable: true,
       initializer: function initializer() {
           return [this.baseStyleObject, {
@@ -32342,7 +32580,7 @@ var Bundle = (function (exports) {
               paddingRight: "4px"
           }];
       }
-  }), _descriptor44 = _applyDecoratedDescriptor$q(_class11.prototype, "threadRepliesSpan", [styleRule], {
+  }), _descriptor44 = _applyDecoratedDescriptor$p(_class11.prototype, "threadRepliesSpan", [styleRule], {
       enumerable: true,
       initializer: function initializer() {
           return {
@@ -32353,7 +32591,7 @@ var Bundle = (function (exports) {
               }
           };
       }
-  }), _descriptor45 = _applyDecoratedDescriptor$q(_class11.prototype, "threadViews", [styleRule], {
+  }), _descriptor45 = _applyDecoratedDescriptor$p(_class11.prototype, "threadViews", [styleRule], {
       enumerable: true,
       initializer: function initializer() {
           var _this11 = this;
@@ -32375,7 +32613,7 @@ var Bundle = (function (exports) {
               return "inherit";
           })];
       }
-  }), _descriptor46 = _applyDecoratedDescriptor$q(_class11.prototype, "threadVotes", [styleRule], {
+  }), _descriptor46 = _applyDecoratedDescriptor$p(_class11.prototype, "threadVotes", [styleRule], {
       enumerable: true,
       initializer: function initializer() {
           var _this12 = this;
@@ -32397,7 +32635,7 @@ var Bundle = (function (exports) {
               return "inherit";
           })];
       }
-  }), _descriptor47 = _applyDecoratedDescriptor$q(_class11.prototype, "threadActivity", [styleRule], {
+  }), _descriptor47 = _applyDecoratedDescriptor$p(_class11.prototype, "threadActivity", [styleRule], {
       enumerable: true,
       initializer: function initializer() {
           return [this.baseStyleObject, {
@@ -32428,18 +32666,18 @@ var Bundle = (function (exports) {
               args[_key5] = arguments[_key5];
           }
 
-          return _ret5 = (_temp5 = (_this13 = possibleConstructorReturn(this, (_ref10 = ForumPanelStyle.__proto__ || Object.getPrototypeOf(ForumPanelStyle)).call.apply(_ref10, [this].concat(args))), _this13), _this13.textColor = "#333", _this13.headerItemHeight = 50, _initDefineProp$q(_this13, "mainClass", _descriptor48, _this13), _initDefineProp$q(_this13, "title", _descriptor49, _this13), _initDefineProp$q(_this13, "buttonParent", _descriptor50, _this13), _initDefineProp$q(_this13, "button", _descriptor51, _this13), _initDefineProp$q(_this13, "header", _descriptor52, _this13), _temp5), possibleConstructorReturn(_this13, _ret5);
+          return _ret5 = (_temp5 = (_this13 = possibleConstructorReturn(this, (_ref10 = ForumPanelStyle.__proto__ || Object.getPrototypeOf(ForumPanelStyle)).call.apply(_ref10, [this].concat(args))), _this13), _this13.textColor = "#333", _this13.headerItemHeight = 50, _initDefineProp$p(_this13, "mainClass", _descriptor48, _this13), _initDefineProp$p(_this13, "title", _descriptor49, _this13), _initDefineProp$p(_this13, "buttonParent", _descriptor50, _this13), _initDefineProp$p(_this13, "button", _descriptor51, _this13), _initDefineProp$p(_this13, "header", _descriptor52, _this13), _temp5), possibleConstructorReturn(_this13, _ret5);
       }
 
       return ForumPanelStyle;
-  }(StyleSheet), (_descriptor48 = _applyDecoratedDescriptor$q(_class13.prototype, "mainClass", [styleRule], {
+  }(StyleSheet), (_descriptor48 = _applyDecoratedDescriptor$p(_class13.prototype, "mainClass", [styleRule], {
       enumerable: true,
       initializer: function initializer() {
           return {
               width: "100%"
           };
       }
-  }), _descriptor49 = _applyDecoratedDescriptor$q(_class13.prototype, "title", [styleRule], {
+  }), _descriptor49 = _applyDecoratedDescriptor$p(_class13.prototype, "title", [styleRule], {
       enumerable: true,
       initializer: function initializer() {
           return {
@@ -32453,7 +32691,7 @@ var Bundle = (function (exports) {
               alignItems: "center"
           };
       }
-  }), _descriptor50 = _applyDecoratedDescriptor$q(_class13.prototype, "buttonParent", [styleRule], {
+  }), _descriptor50 = _applyDecoratedDescriptor$p(_class13.prototype, "buttonParent", [styleRule], {
       enumerable: true,
       initializer: function initializer() {
           return {
@@ -32466,14 +32704,14 @@ var Bundle = (function (exports) {
               alignItems: "center"
           };
       }
-  }), _descriptor51 = _applyDecoratedDescriptor$q(_class13.prototype, "button", [styleRule], {
+  }), _descriptor51 = _applyDecoratedDescriptor$p(_class13.prototype, "button", [styleRule], {
       enumerable: true,
       initializer: function initializer() {
           return {
               margin: "0"
           };
       }
-  }), _descriptor52 = _applyDecoratedDescriptor$q(_class13.prototype, "header", [styleRule], {
+  }), _descriptor52 = _applyDecoratedDescriptor$p(_class13.prototype, "header", [styleRule], {
       enumerable: true,
       initializer: function initializer() {
           return {
@@ -32483,9 +32721,9 @@ var Bundle = (function (exports) {
       }
   })), _class13);
 
-  var _dec$s, _class$U;
+  var _dec$r, _class$T;
 
-  var CreateThreadReplyButton = (_dec$s = registerStyle(ButtonStyle$1), _dec$s(_class$U = function (_Button) {
+  var CreateThreadReplyButton = (_dec$r = registerStyle(ButtonStyle$1), _dec$r(_class$T = function (_Button) {
       inherits(CreateThreadReplyButton, _Button);
 
       function CreateThreadReplyButton() {
@@ -32528,7 +32766,7 @@ var Bundle = (function (exports) {
           }
       }]);
       return CreateThreadReplyButton;
-  }(Button)) || _class$U);
+  }(Button)) || _class$T);
 
   var CreateThreadReplyModal = function (_MarkupEditorModal) {
       inherits(CreateThreadReplyModal, _MarkupEditorModal);
@@ -32561,7 +32799,7 @@ var Bundle = (function (exports) {
       return CreateThreadReplyModal;
   }(MarkupEditorModal);
 
-  var _dec$t, _class$V, _dec2$c, _class2$c;
+  var _dec$s, _class$U, _dec2$c, _class2$c;
 
   var forumThreadPanelStyle = ForumThreadPanelStyle.getInstance();
   var buttonStyle = ButtonStyle$1.getInstance();
@@ -32631,7 +32869,7 @@ var Bundle = (function (exports) {
       return CreateForumThreadModal;
   }(MarkupEditorModal);
 
-  var CreateForumThreadButton = (_dec$t = registerStyle(ButtonStyle$1), _dec$t(_class$V = function (_Button) {
+  var CreateForumThreadButton = (_dec$s = registerStyle(ButtonStyle$1), _dec$s(_class$U = function (_Button) {
       inherits(CreateForumThreadButton, _Button);
 
       function CreateForumThreadButton() {
@@ -32678,7 +32916,7 @@ var Bundle = (function (exports) {
           }
       }]);
       return CreateForumThreadButton;
-  }(Button)) || _class$V);
+  }(Button)) || _class$U);
 
   var DeleteForumThreadModal = function (_ActionModal) {
       inherits(DeleteForumThreadModal, _ActionModal);
@@ -33083,9 +33321,9 @@ var Bundle = (function (exports) {
       return ForumThreadPanel;
   }(Panel)) || _class2$c);
 
-  var _dec$u, _class$W, _dec2$d, _class2$d, _dec3$4, _class3$i, _dec4$1, _class4$3;
+  var _dec$t, _class$V, _dec2$d, _class2$d, _dec3$4, _class3$h, _dec4$1, _class4$3;
 
-  var ForumThreadHeader = (_dec$u = registerStyle(ForumThreadHeaderStyle), _dec$u(_class$W = function (_UI$Element) {
+  var ForumThreadHeader = (_dec$t = registerStyle(ForumThreadHeaderStyle), _dec$t(_class$V = function (_UI$Element) {
       inherits(ForumThreadHeader, _UI$Element);
 
       function ForumThreadHeader() {
@@ -33159,7 +33397,7 @@ var Bundle = (function (exports) {
           }
       }]);
       return ForumThreadHeader;
-  }(UI.Element)) || _class$W);
+  }(UI.Element)) || _class$V);
 
   var ForumThreadPreview = (_dec2$d = registerStyle(ForumThreadPreviewStyle), _dec2$d(_class2$d = function (_ChatMarkupRenderer) {
       inherits(ForumThreadPreview, _ChatMarkupRenderer);
@@ -33178,7 +33416,7 @@ var Bundle = (function (exports) {
       return ForumThreadPreview;
   }(ChatMarkupRenderer)) || _class2$d);
 
-  var ForumThreadBubble = (_dec3$4 = registerStyle(ForumThreadBubbleStyle), _dec3$4(_class3$i = function (_UI$Element2) {
+  var ForumThreadBubble = (_dec3$4 = registerStyle(ForumThreadBubbleStyle), _dec3$4(_class3$h = function (_UI$Element2) {
       inherits(ForumThreadBubble, _UI$Element2);
 
       function ForumThreadBubble() {
@@ -33321,7 +33559,7 @@ var Bundle = (function (exports) {
           }
       }]);
       return ForumThreadBubble;
-  }(UI.Element)) || _class3$i);
+  }(UI.Element)) || _class3$h);
 
   var ForumThreadList = function (_UI$Element3) {
       inherits(ForumThreadList, _UI$Element3);
@@ -33567,9 +33805,9 @@ var Bundle = (function (exports) {
 
   var MAIN_ROUTE = new Route(null, IndexPage, [new BlogRoute(), new ForumRoute()]);
 
-  var _class$X, _descriptor$q, _descriptor2$o, _descriptor3$m, _descriptor4$k, _descriptor5$i, _descriptor6$f, _descriptor7$d, _descriptor8$9, _descriptor9$8, _descriptor10$7, _descriptor11$7, _descriptor12$6, _descriptor13$6, _descriptor14$6, _descriptor15$6, _descriptor16$6, _descriptor17$6, _descriptor18$4, _descriptor19$4, _descriptor20$4;
+  var _class$W, _descriptor$p, _descriptor2$n, _descriptor3$l, _descriptor4$j, _descriptor5$h, _descriptor6$e, _descriptor7$c, _descriptor8$a, _descriptor9$9, _descriptor10$8, _descriptor11$8, _descriptor12$7, _descriptor13$7, _descriptor14$6, _descriptor15$6, _descriptor16$6, _descriptor17$6, _descriptor18$4, _descriptor19$4, _descriptor20$4;
 
-  function _initDefineProp$r(target, property, descriptor, context) {
+  function _initDefineProp$q(target, property, descriptor, context) {
       if (!descriptor) return;
       Object.defineProperty(target, property, {
           enumerable: descriptor.enumerable,
@@ -33579,7 +33817,7 @@ var Bundle = (function (exports) {
       });
   }
 
-  function _applyDecoratedDescriptor$r(target, property, decorators, descriptor, context) {
+  function _applyDecoratedDescriptor$q(target, property, decorators, descriptor, context) {
       var desc = {};
       Object['ke' + 'ys'](descriptor).forEach(function (key) {
           desc[key] = descriptor[key];
@@ -33608,7 +33846,7 @@ var Bundle = (function (exports) {
       return desc;
   }
 
-  var NavStyle = (_class$X = function (_StyleSheet) {
+  var NavStyle = (_class$W = function (_StyleSheet) {
       inherits(NavStyle, _StyleSheet);
 
       function NavStyle() {
@@ -33632,9 +33870,9 @@ var Bundle = (function (exports) {
               sidepanelTransitionDuration: ".15s",
               boxShadowWidth: "5px",
               backgroundTransitionDuration: ".2s"
-          }, _initDefineProp$r(_this, "icon", _descriptor$q, _this), _initDefineProp$r(_this, "sideIcon", _descriptor2$o, _this), _initDefineProp$r(_this, "wrappedIcon", _descriptor3$m, _this), _this.navElement = {
+          }, _initDefineProp$q(_this, "icon", _descriptor$p, _this), _initDefineProp$q(_this, "sideIcon", _descriptor2$n, _this), _initDefineProp$q(_this, "wrappedIcon", _descriptor3$l, _this), _this.navElement = {
               transition: "background-color " + _this.dimensions.backgroundTransitionDuration
-          }, _initDefineProp$r(_this, "navLinkElement", _descriptor4$k, _this), _initDefineProp$r(_this, "navManager", _descriptor5$i, _this), _initDefineProp$r(_this, "navElementHorizontal", _descriptor6$f, _this), _initDefineProp$r(_this, "navElementHorizontalArrow", _descriptor7$d, _this), _initDefineProp$r(_this, "navElementValueHorizontal", _descriptor8$9, _this), _initDefineProp$r(_this, "navSectionHorizontal", _descriptor9$8, _this), _this.sidePanel = {
+          }, _initDefineProp$q(_this, "navLinkElement", _descriptor4$j, _this), _initDefineProp$q(_this, "navManager", _descriptor5$h, _this), _initDefineProp$q(_this, "navElementHorizontal", _descriptor6$e, _this), _initDefineProp$q(_this, "navElementHorizontalArrow", _descriptor7$c, _this), _initDefineProp$q(_this, "navElementValueHorizontal", _descriptor8$a, _this), _initDefineProp$q(_this, "navSectionHorizontal", _descriptor9$9, _this), _this.sidePanel = {
               top: "0",
               bottom: "0",
               height: "100%",
@@ -33653,7 +33891,7 @@ var Bundle = (function (exports) {
               transitionDuration: function transitionDuration() {
                   return _this.dimensions.sidepanelTransitionDuration;
               }
-          }, _initDefineProp$r(_this, "leftSidePanel", _descriptor10$7, _this), _initDefineProp$r(_this, "rightSidePanel", _descriptor11$7, _this), _initDefineProp$r(_this, "navElementVertical", _descriptor12$6, _this), _initDefineProp$r(_this, "navElementVerticalArrow", _descriptor13$6, _this), _initDefineProp$r(_this, "navElementValueVertical", _descriptor14$6, _this), _initDefineProp$r(_this, "navSectionVertical", _descriptor15$6, _this), _initDefineProp$r(_this, "navCollapseElement", _descriptor16$6, _this), _initDefineProp$r(_this, "sidePanelGroup", _descriptor17$6, _this), _initDefineProp$r(_this, "hrStyle", _descriptor18$4, _this), _initDefineProp$r(_this, "navVerticalLeftHide", _descriptor19$4, _this), _initDefineProp$r(_this, "navVerticalRightHide", _descriptor20$4, _this), _temp), possibleConstructorReturn(_this, _ret);
+          }, _initDefineProp$q(_this, "leftSidePanel", _descriptor10$8, _this), _initDefineProp$q(_this, "rightSidePanel", _descriptor11$8, _this), _initDefineProp$q(_this, "navElementVertical", _descriptor12$7, _this), _initDefineProp$q(_this, "navElementVerticalArrow", _descriptor13$7, _this), _initDefineProp$q(_this, "navElementValueVertical", _descriptor14$6, _this), _initDefineProp$q(_this, "navSectionVertical", _descriptor15$6, _this), _initDefineProp$q(_this, "navCollapseElement", _descriptor16$6, _this), _initDefineProp$q(_this, "sidePanelGroup", _descriptor17$6, _this), _initDefineProp$q(_this, "hrStyle", _descriptor18$4, _this), _initDefineProp$q(_this, "navVerticalLeftHide", _descriptor19$4, _this), _initDefineProp$q(_this, "navVerticalRightHide", _descriptor20$4, _this), _temp), possibleConstructorReturn(_this, _ret);
       }
 
       createClass(NavStyle, [{
@@ -33703,7 +33941,7 @@ var Bundle = (function (exports) {
 
       }]);
       return NavStyle;
-  }(StyleSheet), (_descriptor$q = _applyDecoratedDescriptor$r(_class$X.prototype, "icon", [styleRule], {
+  }(StyleSheet), (_descriptor$p = _applyDecoratedDescriptor$q(_class$W.prototype, "icon", [styleRule], {
       enumerable: true,
       initializer: function initializer() {
           return {
@@ -33719,14 +33957,14 @@ var Bundle = (function (exports) {
               }
           };
       }
-  }), _descriptor2$o = _applyDecoratedDescriptor$r(_class$X.prototype, "sideIcon", [styleRule], {
+  }), _descriptor2$n = _applyDecoratedDescriptor$q(_class$W.prototype, "sideIcon", [styleRule], {
       enumerable: true,
       initializer: function initializer() {
           return {
               fontSize: "120%"
           };
       }
-  }), _descriptor3$m = _applyDecoratedDescriptor$r(_class$X.prototype, "wrappedIcon", [styleRule], {
+  }), _descriptor3$l = _applyDecoratedDescriptor$q(_class$W.prototype, "wrappedIcon", [styleRule], {
       enumerable: true,
       initializer: function initializer() {
           return {
@@ -33734,7 +33972,7 @@ var Bundle = (function (exports) {
               flex: "1"
           };
       }
-  }), _descriptor4$k = _applyDecoratedDescriptor$r(_class$X.prototype, "navLinkElement", [styleRule], {
+  }), _descriptor4$j = _applyDecoratedDescriptor$q(_class$W.prototype, "navLinkElement", [styleRule], {
       enumerable: true,
       initializer: function initializer() {
           return {
@@ -33761,7 +33999,7 @@ var Bundle = (function (exports) {
               }
           };
       }
-  }), _descriptor5$i = _applyDecoratedDescriptor$r(_class$X.prototype, "navManager", [styleRule], {
+  }), _descriptor5$h = _applyDecoratedDescriptor$q(_class$W.prototype, "navManager", [styleRule], {
       enumerable: true,
       initializer: function initializer() {
           return {
@@ -33775,7 +34013,7 @@ var Bundle = (function (exports) {
               position: "fixed"
           };
       }
-  }), _descriptor6$f = _applyDecoratedDescriptor$r(_class$X.prototype, "navElementHorizontal", [styleRule], {
+  }), _descriptor6$e = _applyDecoratedDescriptor$q(_class$W.prototype, "navElementHorizontal", [styleRule], {
       enumerable: true,
       initializer: function initializer() {
           return {
@@ -33788,7 +34026,7 @@ var Bundle = (function (exports) {
               }
           };
       }
-  }), _descriptor7$d = _applyDecoratedDescriptor$r(_class$X.prototype, "navElementHorizontalArrow", [styleRule], {
+  }), _descriptor7$c = _applyDecoratedDescriptor$q(_class$W.prototype, "navElementHorizontalArrow", [styleRule], {
       enumerable: true,
       initializer: function initializer() {
           return {
@@ -33796,7 +34034,7 @@ var Bundle = (function (exports) {
               verticalAlign: "middle"
           };
       }
-  }), _descriptor8$9 = _applyDecoratedDescriptor$r(_class$X.prototype, "navElementValueHorizontal", [styleRule], {
+  }), _descriptor8$a = _applyDecoratedDescriptor$q(_class$W.prototype, "navElementValueHorizontal", [styleRule], {
       enumerable: true,
       initializer: function initializer() {
           return [this.navElement, {
@@ -33808,7 +34046,7 @@ var Bundle = (function (exports) {
               }
           }];
       }
-  }), _descriptor9$8 = _applyDecoratedDescriptor$r(_class$X.prototype, "navSectionHorizontal", [styleRule], {
+  }), _descriptor9$9 = _applyDecoratedDescriptor$q(_class$W.prototype, "navSectionHorizontal", [styleRule], {
       enumerable: true,
       initializer: function initializer() {
           return {
@@ -33818,7 +34056,7 @@ var Bundle = (function (exports) {
               marginBottom: "0"
           };
       }
-  }), _descriptor10$7 = _applyDecoratedDescriptor$r(_class$X.prototype, "leftSidePanel", [styleRule], {
+  }), _descriptor10$8 = _applyDecoratedDescriptor$q(_class$W.prototype, "leftSidePanel", [styleRule], {
       enumerable: true,
       initializer: function initializer() {
           return [this.sidePanel, {
@@ -33831,12 +34069,12 @@ var Bundle = (function (exports) {
               }
           }];
       }
-  }), _descriptor11$7 = _applyDecoratedDescriptor$r(_class$X.prototype, "rightSidePanel", [styleRule], {
+  }), _descriptor11$8 = _applyDecoratedDescriptor$q(_class$W.prototype, "rightSidePanel", [styleRule], {
       enumerable: true,
       initializer: function initializer() {
           return this.sidePanel;
       }
-  }), _descriptor12$6 = _applyDecoratedDescriptor$r(_class$X.prototype, "navElementVertical", [styleRule], {
+  }), _descriptor12$7 = _applyDecoratedDescriptor$q(_class$W.prototype, "navElementVertical", [styleRule], {
       enumerable: true,
       initializer: function initializer() {
           return {
@@ -33851,7 +34089,7 @@ var Bundle = (function (exports) {
               }
           };
       }
-  }), _descriptor13$6 = _applyDecoratedDescriptor$r(_class$X.prototype, "navElementVerticalArrow", [styleRule], {
+  }), _descriptor13$7 = _applyDecoratedDescriptor$q(_class$W.prototype, "navElementVerticalArrow", [styleRule], {
       enumerable: true,
       initializer: function initializer() {
           return {
@@ -33859,7 +34097,7 @@ var Bundle = (function (exports) {
               textAlign: "center"
           };
       }
-  }), _descriptor14$6 = _applyDecoratedDescriptor$r(_class$X.prototype, "navElementValueVertical", [styleRule], {
+  }), _descriptor14$6 = _applyDecoratedDescriptor$q(_class$W.prototype, "navElementValueVertical", [styleRule], {
       enumerable: true,
       initializer: function initializer() {
           return [this.navElement, {
@@ -33874,7 +34112,7 @@ var Bundle = (function (exports) {
               }
           }];
       }
-  }), _descriptor15$6 = _applyDecoratedDescriptor$r(_class$X.prototype, "navSectionVertical", [styleRule], {
+  }), _descriptor15$6 = _applyDecoratedDescriptor$q(_class$W.prototype, "navSectionVertical", [styleRule], {
       enumerable: true,
       initializer: function initializer() {
           return {
@@ -33883,7 +34121,7 @@ var Bundle = (function (exports) {
               width: "100%"
           };
       }
-  }), _descriptor16$6 = _applyDecoratedDescriptor$r(_class$X.prototype, "navCollapseElement", [styleRule], {
+  }), _descriptor16$6 = _applyDecoratedDescriptor$q(_class$W.prototype, "navCollapseElement", [styleRule], {
       enumerable: true,
       initializer: function initializer() {
           return {
@@ -33892,7 +34130,7 @@ var Bundle = (function (exports) {
               lineHeight: this.dimensions.sidepanelElementHeight
           };
       }
-  }), _descriptor17$6 = _applyDecoratedDescriptor$r(_class$X.prototype, "sidePanelGroup", [styleRule], {
+  }), _descriptor17$6 = _applyDecoratedDescriptor$q(_class$W.prototype, "sidePanelGroup", [styleRule], {
       enumerable: true,
       initializer: function initializer() {
           return {
@@ -33903,7 +34141,7 @@ var Bundle = (function (exports) {
               zIndex: "3"
           };
       }
-  }), _descriptor18$4 = _applyDecoratedDescriptor$r(_class$X.prototype, "hrStyle", [styleRule], {
+  }), _descriptor18$4 = _applyDecoratedDescriptor$q(_class$W.prototype, "hrStyle", [styleRule], {
       enumerable: true,
       initializer: function initializer() {
           var _this2 = this;
@@ -33915,7 +34153,7 @@ var Bundle = (function (exports) {
               }
           };
       }
-  }), _descriptor19$4 = _applyDecoratedDescriptor$r(_class$X.prototype, "navVerticalLeftHide", [styleRule], {
+  }), _descriptor19$4 = _applyDecoratedDescriptor$q(_class$W.prototype, "navVerticalLeftHide", [styleRule], {
       enumerable: true,
       initializer: function initializer() {
           return {
@@ -33923,7 +34161,7 @@ var Bundle = (function (exports) {
               overflow: "hidden"
           };
       }
-  }), _descriptor20$4 = _applyDecoratedDescriptor$r(_class$X.prototype, "navVerticalRightHide", [styleRule], {
+  }), _descriptor20$4 = _applyDecoratedDescriptor$q(_class$W.prototype, "navVerticalRightHide", [styleRule], {
       enumerable: true,
       initializer: function initializer() {
           return {
@@ -33931,15 +34169,15 @@ var Bundle = (function (exports) {
               overflow: "hidden"
           };
       }
-  })), _class$X);
+  })), _class$W);
 
-  var _class$Y, _temp$9;
+  var _class$X, _temp$9;
 
   // Class for working with the Window.localStorage and Window.sessionStorage objects
   // All keys are prefixed with our custom name, so we don't have to worry about polluting the global storage namespace
   // Keys must be strings, and values are modified by the serialize/deserialize methods,
   // which by default involve JSON conversion
-  var StorageMap = (_temp$9 = _class$Y = function (_Dispatchable) {
+  var StorageMap = (_temp$9 = _class$X = function (_Dispatchable) {
       inherits(StorageMap, _Dispatchable);
 
       function StorageMap(storage) {
@@ -34086,7 +34324,7 @@ var Bundle = (function (exports) {
           }
       }]);
       return StorageMap;
-  }(Dispatchable), _class$Y.SEPARATOR = "-@#%-", _temp$9);
+  }(Dispatchable), _class$X.SEPARATOR = "-@#%-", _temp$9);
 
   // SessionStorageMap can be used to preserve data on tab refreshes
 
@@ -34725,7 +34963,7 @@ var Bundle = (function (exports) {
       }
   }
 
-  var _dec$v, _class$Z, _dec2$e, _class3$j;
+  var _dec$u, _class$Y, _dec2$e, _class3$i;
 
   var SidePanelGroup = function (_UI$Element) {
       inherits(SidePanelGroup, _UI$Element);
@@ -34759,7 +34997,7 @@ var Bundle = (function (exports) {
       return SidePanelGroup;
   }(UI.Element);
 
-  var SidePanel = (_dec$v = registerStyle(NavStyle), _dec$v(_class$Z = function (_UI$Element2) {
+  var SidePanel = (_dec$u = registerStyle(NavStyle), _dec$u(_class$Y = function (_UI$Element2) {
       inherits(SidePanel, _UI$Element2);
 
       function SidePanel() {
@@ -34851,7 +35089,7 @@ var Bundle = (function (exports) {
           }
       }]);
       return SidePanel;
-  }(UI.Element)) || _class$Z);
+  }(UI.Element)) || _class$Y);
 
   var NavCarouselStyle = function (_CarouselStyle) {
       inherits(NavCarouselStyle, _CarouselStyle);
@@ -34879,7 +35117,7 @@ var Bundle = (function (exports) {
       return NavCarouselStyle;
   }(CarouselStyle$$1);
 
-  var NavManager = (_dec2$e = registerStyle(NavStyle), _dec2$e(_class3$j = function (_UI$Primitive) {
+  var NavManager = (_dec2$e = registerStyle(NavStyle), _dec2$e(_class3$i = function (_UI$Primitive) {
       inherits(NavManager, _UI$Primitive);
       createClass(NavManager, [{
           key: "getCarouselStyleSheet",
@@ -35274,369 +35512,48 @@ var Bundle = (function (exports) {
           }
       }]);
       return NavManager;
-  }(UI.Primitive("nav"))) || _class3$j);
+  }(UI.Primitive("nav"))) || _class3$i);
 
-  function logout() {
-      Dispatcher.Global.dispatch("logout");
-      Ajax.postJSON("/accounts/logout/", {}).then(function () {
-          Dispatcher.Global.dispatch("logoutSuccess");
-          location.reload();
+  var _class$Z, _descriptor$q, _descriptor2$o, _descriptor3$m, _dec$v, _class3$j;
+
+  function _initDefineProp$r(target, property, descriptor, context) {
+      if (!descriptor) return;
+      Object.defineProperty(target, property, {
+          enumerable: descriptor.enumerable,
+          configurable: descriptor.configurable,
+          writable: descriptor.writable,
+          value: descriptor.initializer ? descriptor.initializer.call(context) : void 0
       });
   }
 
-  var StorageLimits = function () {
-      function StorageLimits() {
-          classCallCheck(this, StorageLimits);
+  function _applyDecoratedDescriptor$r(target, property, decorators, descriptor, context) {
+      var desc = {};
+      Object['ke' + 'ys'](descriptor).forEach(function (key) {
+          desc[key] = descriptor[key];
+      });
+      desc.enumerable = !!desc.enumerable;
+      desc.configurable = !!desc.configurable;
+
+      if ('value' in desc || desc.initializer) {
+          desc.writable = true;
       }
 
-      createClass(StorageLimits, null, [{
-          key: "userFileMaxCount",
-          value: function userFileMaxCount() {
-              if (USER.isSuperUser) {
-                  return -1;
-              }
-              return 512;
-          }
-      }, {
-          key: "userUploadMaxCount",
-          value: function userUploadMaxCount() {
-              if (USER.isSuperUser) {
-                  return -1;
-              }
-              return 16;
-          }
-      }, {
-          key: "userFileMaxSize",
-          value: function userFileMaxSize() {
-              if (USER.isSuperUser) {
-                  return -1;
-              }
-              return 128 * 1024 * 1024;
-          }
-      }, {
-          key: "userTotalMaxSize",
-          value: function userTotalMaxSize() {
-              if (USER.isSuperUser) {
-                  return 1024 * 1024 * 1024;
-              }
-              return 256 * 1024 * 1024;
-          }
-      }, {
-          key: "validateFileMaxCount",
-          value: function validateFileMaxCount(storageMeta, fileCount) {
-              var maxFileCount = StorageLimits.userFileMaxCount();
-              if (maxFileCount == -1) {
-                  return true;
-              }
-              return storageMeta.getFileCount() + fileCount <= maxFileCount;
-          }
-      }, {
-          key: "validateUploadMaxCount",
-          value: function validateUploadMaxCount(fileCount) {
-              var uploadMaxCount = StorageLimits.userUploadMaxCount();
-              if (uploadMaxCount == -1) {
-                  return true;
-              }
-              return fileCount <= uploadMaxCount;
-          }
-      }, {
-          key: "validateFileMaxSize",
-          value: function validateFileMaxSize(fileSize) {
-              var fileMaxSize = StorageLimits.userFileMaxSize();
-              if (fileMaxSize == -1) {
-                  return true;
-              }
-              return fileSize <= fileMaxSize;
-          }
-      }, {
-          key: "validateTotalMaxSize",
-          value: function validateTotalMaxSize(storageMeta, totalSize) {
-              var totalMaxSize = StorageLimits.userTotalMaxSize();
-              if (totalMaxSize == -1) {
-                  return true;
-              }
-              return storageMeta.getUsedSpace() + totalSize <= totalMaxSize;
-          }
-      }]);
-      return StorageLimits;
-  }();
+      desc = decorators.slice().reverse().reduce(function (desc, decorator) {
+          return decorator(target, property, desc) || desc;
+      }, desc);
 
-  var StorageMeta = function () {
-      function StorageMeta(usedSpace, fileCount) {
-          classCallCheck(this, StorageMeta);
-
-          this.usedSpace = usedSpace;
-          this.fileCount = fileCount;
+      if (context && desc.initializer !== void 0) {
+          desc.value = desc.initializer ? desc.initializer.call(context) : void 0;
+          desc.initializer = undefined;
       }
 
-      createClass(StorageMeta, [{
-          key: "getUsedSpace",
-          value: function getUsedSpace() {
-              return this.usedSpace;
-          }
-      }, {
-          key: "getFileCount",
-          value: function getFileCount() {
-              return this.fileCount;
-          }
-      }]);
-      return StorageMeta;
-  }();
-
-  var PublicStorageFile = function (_StoreObject) {
-      inherits(PublicStorageFile, _StoreObject);
-
-      function PublicStorageFile() {
-          classCallCheck(this, PublicStorageFile);
-          return possibleConstructorReturn(this, (PublicStorageFile.__proto__ || Object.getPrototypeOf(PublicStorageFile)).apply(this, arguments));
+      if (desc.initializer === void 0) {
+          Object['define' + 'Property'](target, property, desc);
+          desc = null;
       }
 
-      createClass(PublicStorageFile, [{
-          key: "getStorageServer",
-          value: function getStorageServer() {
-              return StorageServerStore.get(this.storageServerId);
-          }
-      }, {
-          key: "getPublicURL",
-          value: function getPublicURL() {
-              var storageServer = this.getStorageServer();
-              return storageServer.domain + storageServer.urlBasePath + this.serverPath;
-          }
-      }]);
-      return PublicStorageFile;
-  }(StoreObject);
-
-  var PublicStorageFileStoreClass = function (_GenericObjectStore) {
-      inherits(PublicStorageFileStoreClass, _GenericObjectStore);
-
-      function PublicStorageFileStoreClass() {
-          classCallCheck(this, PublicStorageFileStoreClass);
-          return possibleConstructorReturn(this, (PublicStorageFileStoreClass.__proto__ || Object.getPrototypeOf(PublicStorageFileStoreClass)).apply(this, arguments));
-      }
-
-      createClass(PublicStorageFileStoreClass, [{
-          key: "getStorageMeta",
-          value: function getStorageMeta() {
-              var usedSpace = 0;
-              var files = this.all();
-              var _iteratorNormalCompletion = true;
-              var _didIteratorError = false;
-              var _iteratorError = undefined;
-
-              try {
-                  for (var _iterator = files[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-                      var file = _step.value;
-
-                      usedSpace += file.size;
-                  }
-              } catch (err) {
-                  _didIteratorError = true;
-                  _iteratorError = err;
-              } finally {
-                  try {
-                      if (!_iteratorNormalCompletion && _iterator.return) {
-                          _iterator.return();
-                      }
-                  } finally {
-                      if (_didIteratorError) {
-                          throw _iteratorError;
-                      }
-                  }
-              }
-
-              return new StorageMeta(usedSpace, files.length);
-          }
-      }, {
-          key: "getAllIds",
-          value: function getAllIds() {
-              var files = this.all();
-              var ids = [];
-              var _iteratorNormalCompletion2 = true;
-              var _didIteratorError2 = false;
-              var _iteratorError2 = undefined;
-
-              try {
-                  for (var _iterator2 = files[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
-                      var file = _step2.value;
-
-                      ids.push(file.id);
-                  }
-              } catch (err) {
-                  _didIteratorError2 = true;
-                  _iteratorError2 = err;
-              } finally {
-                  try {
-                      if (!_iteratorNormalCompletion2 && _iterator2.return) {
-                          _iterator2.return();
-                      }
-                  } finally {
-                      if (_didIteratorError2) {
-                          throw _iteratorError2;
-                      }
-                  }
-              }
-
-              return ids;
-          }
-      }]);
-      return PublicStorageFileStoreClass;
-  }(GenericObjectStore);
-
-  var PublicStorageFileStore = new PublicStorageFileStoreClass("PublicStorageFile", PublicStorageFile);
-
-  var StorageServer = function (_StoreObject2) {
-      inherits(StorageServer, _StoreObject2);
-
-      function StorageServer() {
-          classCallCheck(this, StorageServer);
-          return possibleConstructorReturn(this, (StorageServer.__proto__ || Object.getPrototypeOf(StorageServer)).apply(this, arguments));
-      }
-
-      return StorageServer;
-  }(StoreObject);
-
-  var StorageServerStore = new GenericObjectStore("StorageServer", StorageServer);
-
-  function humanFileSize(size) {
-      var i = Math.floor(Math.log(size) / Math.log(1024));
-      return (size / Math.pow(1024, i)).toFixed(2) * 1 + " " + ["B", "kB", "MB", "GB", "TB"][i];
+      return desc;
   }
-  var UploadFilesModal = function (_ActionModal) {
-      inherits(UploadFilesModal, _ActionModal);
-
-      function UploadFilesModal() {
-          classCallCheck(this, UploadFilesModal);
-          return possibleConstructorReturn(this, (UploadFilesModal.__proto__ || Object.getPrototypeOf(UploadFilesModal)).apply(this, arguments));
-      }
-
-      createClass(UploadFilesModal, [{
-          key: "getActionName",
-          value: function getActionName() {
-              return "Upload files";
-          }
-      }, {
-          key: "getBody",
-          value: function getBody() {
-              return [UI.createElement(
-                  "div",
-                  null,
-                  UI.createElement(FileInput, { className: "pull-left", ref: "fileInput", multipleFiles: true })
-              ), UI.createElement(TextInput, { ref: "titleInput" }), UI.createElement("br", null), UI.createElement(
-                  ProgressBar,
-                  { level: Level.SUCCESS, ref: "progress" },
-                  "Progress"
-              )];
-          }
-      }, {
-          key: "getFooter",
-          value: function getFooter() {
-              var _this2 = this;
-
-              return [UI.createElement(TemporaryMessageArea, { ref: "messageArea" }), UI.createElement(
-                  ButtonGroup,
-                  null,
-                  UI.createElement(Button, { label: "Close", onClick: function onClick() {
-                          return _this2.hide();
-                      } }),
-                  UI.createElement(Button, { level: Level.SUCCESS, label: "Upload", onClick: function onClick() {
-                          return _this2.upload();
-                      } })
-              )];
-          }
-      }, {
-          key: "onMount",
-          value: function onMount() {
-              var _this3 = this;
-
-              get(UploadFilesModal.prototype.__proto__ || Object.getPrototypeOf(UploadFilesModal.prototype), "onMount", this).call(this);
-
-              this.fileInput.addChangeListener(function () {
-                  if (!(window.File && window.FileReader && window.FileList && window.Blob)) {
-                      console.error('The File APIs are not fully supported in this browser.');
-                      return false;
-                  }
-                  _this3.messageArea.clear();
-                  _this3.progress.set(0);
-              });
-          }
-      }, {
-          key: "upload",
-          value: function upload() {
-              var _this4 = this;
-
-              var files = this.fileInput.getFiles();
-
-              if (files.length == 0) {
-                  this.messageArea.showMessage("Please select some files!", "red");
-                  return;
-              }
-
-              if (!StorageLimits.validateUploadMaxCount(files.length)) {
-                  this.messageArea.showMessage("You cannot upload more than " + StorageLimits.userUploadMaxCount() + " files at once!", "red");
-                  return;
-              }
-
-              var storageMeta = PublicStorageFileStore.getStorageMeta();
-
-              if (!StorageLimits.validateFileMaxCount(storageMeta, files.length)) {
-                  this.messageArea.showMessage("Completion of this request will exceed the maximum number of total files you can " + "store (" + StorageLimits.userFileMaxCount() + ").", "red");
-                  return;
-              }
-
-              var totalSize = 0;
-              var formData = new FormData();
-
-              for (var index = 0; index < files.length; ++index) {
-                  if (!StorageLimits.validateFileMaxSize(files[index].size)) {
-                      this.messageArea.showMessage("File " + files[index].name + " is too big (" + humanFileSize(files[index].size) + " while maximum size per file is " + humanFileSize(StorageLimits.userFileMaxSize()) + ").", "red");
-                      return;
-                  }
-                  formData.append(files[index].name, files[index]);
-                  totalSize += files[index].size;
-              }
-
-              if (!StorageLimits.validateTotalMaxSize(storageMeta, totalSize)) {
-                  this.messageArea.showMessage("Completion of this request will exceed the maximum total size you can store (" + humanFileSize(StorageLimits.userTotalMaxSize()) + ").", "red");
-                  return;
-              }
-
-              formData.append("title", this.titleInput.getValue());
-
-              var fileUploadRequest = Ajax.post("/recognize/", {
-                  dataType: "json",
-                  data: formData,
-                  cache: false,
-                  processData: false,
-                  contentType: false
-              });
-
-              fileUploadRequest.then(function (data) {
-                  return _this4.hide();
-              }, function (error) {
-                  _this4.messageArea.showMessage("Error in uploading files: status:" + error.message, "red");
-              });
-
-              fileUploadRequest.addProgressListener(function (event) {
-                  _this4.progressHandling(event);
-              });
-          }
-      }, {
-          key: "hide",
-          value: function hide() {
-              this.messageArea.clear();
-              this.progress.set(0);
-              get(UploadFilesModal.prototype.__proto__ || Object.getPrototypeOf(UploadFilesModal.prototype), "hide", this).call(this);
-          }
-      }, {
-          key: "progressHandling",
-          value: function progressHandling(event) {
-              if (event.lengthComputable) {
-                  this.progress.set(event.loaded / event.total);
-              }
-          }
-      }]);
-      return UploadFilesModal;
-  }(ActionModal);
 
   /*
    * This is the NavManager file of your app.
@@ -35645,21 +35562,83 @@ var Bundle = (function (exports) {
    * Follow the instructions below in order to customize your application.
    */
 
-  var AppNavManager = function (_NavManager) {
-      inherits(AppNavManager, _NavManager);
+  var AppNavManagerStyle = (_class$Z = function (_NavStyle) {
+      inherits(AppNavManagerStyle, _NavStyle);
 
-      function AppNavManager() {
+      function AppNavManagerStyle() {
           var _ref;
 
           var _temp, _this, _ret;
 
-          classCallCheck(this, AppNavManager);
+          classCallCheck(this, AppNavManagerStyle);
 
           for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
               args[_key] = arguments[_key];
           }
 
-          return _ret = (_temp = (_this = possibleConstructorReturn(this, (_ref = AppNavManager.__proto__ || Object.getPrototypeOf(AppNavManager)).call.apply(_ref, [this].concat(args))), _this), _this.leftSidePanel = null, _this.rightSidePanel = null, _temp), possibleConstructorReturn(_this, _ret);
+          return _ret = (_temp = (_this = possibleConstructorReturn(this, (_ref = AppNavManagerStyle.__proto__ || Object.getPrototypeOf(AppNavManagerStyle)).call.apply(_ref, [this].concat(args))), _this), _initDefineProp$r(_this, "navManager", _descriptor$q, _this), _this.dimensions = {
+              collapseArrowWidth: "20px",
+              navbarHeight: "76px",
+              sidepanelElementHeight: "30px",
+              sidepanelWidthLeft: "250px",
+              sidepanelWidth: "330px",
+              sidepanelHideWidth: "335px",
+              sidepanelTransitionDuration: ".15s",
+              boxShadowWidth: "5px",
+              backgroundTransitionDuration: ".2s"
+          }, _initDefineProp$r(_this, "anpr", _descriptor2$o, _this), _initDefineProp$r(_this, "contribute", _descriptor3$m, _this), _temp), possibleConstructorReturn(_this, _ret);
+      }
+
+      return AppNavManagerStyle;
+  }(NavStyle), (_descriptor$q = _applyDecoratedDescriptor$r(_class$Z.prototype, "navManager", [styleRuleInherit], {
+      enumerable: true,
+      initializer: function initializer() {
+          return {
+              backgroundColor: "",
+              background: "#5824AA",
+              boxShadow: "none"
+          };
+      }
+  }), _descriptor2$o = _applyDecoratedDescriptor$r(_class$Z.prototype, "anpr", [styleRule], {
+      enumerable: true,
+      initializer: function initializer() {
+          return {
+              color: "white",
+              fontWeight: "bold",
+              paddingLeft: "31px",
+              fontSize: "33px"
+          };
+      }
+  }), _descriptor3$m = _applyDecoratedDescriptor$r(_class$Z.prototype, "contribute", [styleRule], {
+      enumerable: true,
+      initializer: function initializer() {
+          return {
+              color: "white",
+              fontWeight: "bold",
+              fontSize: "23px",
+              opacity: .57,
+              background: "transparent !important",
+              ">*:hover": {
+                  background: "rgba(255,255,255,.3) !important"
+              }
+          };
+      }
+  })), _class$Z);
+  var AppNavManager = (_dec$v = registerStyle(AppNavManagerStyle), _dec$v(_class3$j = function (_NavManager) {
+      inherits(AppNavManager, _NavManager);
+
+      function AppNavManager() {
+          var _ref2;
+
+          var _temp2, _this2, _ret2;
+
+          classCallCheck(this, AppNavManager);
+
+          for (var _len2 = arguments.length, args = Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
+              args[_key2] = arguments[_key2];
+          }
+
+          return _ret2 = (_temp2 = (_this2 = possibleConstructorReturn(this, (_ref2 = AppNavManager.__proto__ || Object.getPrototypeOf(AppNavManager)).call.apply(_ref2, [this].concat(args))), _this2), _this2.leftSidePanel = null, _this2.rightSidePanel = null, _temp2), possibleConstructorReturn(_this2, _ret2);
       }
 
       createClass(AppNavManager, [{
@@ -35668,23 +35647,12 @@ var Bundle = (function (exports) {
               return [UI.createElement(
                   NavSection,
                   { anchor: Direction.LEFT, style: { margin: 0 } },
-                  UI.createElement(NavLinkElement, { value: "Home", href: "/" }),
-                  UI.createElement(Button, { label: "Upload image", onClick: function onClick() {
-                          return UploadFilesModal.show();
-                      } })
+                  UI.createElement(
+                      "div",
+                      { className: this.styleSheet.anpr },
+                      "ANPR"
+                  )
               )];
-          }
-      }, {
-          key: "getUserElement",
-          value: function getUserElement() {
-              return UI.createElement(
-                  NavElement,
-                  { value: [UI.createElement(FAIcon, { icon: "user", style: { marginRight: "0.3rem" } }), USER.email] },
-                  UI.createElement(NavElement, { value: UI.T("Settings") }),
-                  UI.createElement(NavElement, { value: UI.T("Logout"), onClick: function onClick() {
-                          return logout();
-                      } })
-              );
           }
       }, {
           key: "getRightFixed",
@@ -35692,12 +35660,12 @@ var Bundle = (function (exports) {
               return [UI.createElement(
                   NavSection,
                   { anchor: Direction.RIGHT, style: { margin: 0 } },
-                  this.getUserElement()
+                  UI.createElement(NavLinkElement, { href: "https://github.com/dbribe/translify", newTab: true, className: this.styleSheet.contribute, value: "contribute on Github" })
               )];
           }
       }]);
       return AppNavManager;
-  }(NavManager);
+  }(NavManager)) || _class3$j);
 
   function singlePageLinkOnMount() {
       var _this = this;
@@ -36317,7 +36285,7 @@ var Bundle = (function (exports) {
 
   WebsocketSubscriber.Global = new WebsocketSubscriber();
 
-  var _dec$w, _dec2$f, _dec3$5, _dec4$2, _dec5$1, _dec6$1, _dec7$1, _dec8, _dec9, _class$11, _descriptor$r, _descriptor2$p, _descriptor3$n, _descriptor4$l, _descriptor5$j, _descriptor6$g, _descriptor7$e, _descriptor8$a, _descriptor9$9;
+  var _dec$w, _dec2$f, _dec3$5, _dec4$2, _dec5$1, _dec6$1, _dec7$1, _dec8, _dec9, _class$11, _descriptor$r, _descriptor2$p, _descriptor3$n, _descriptor4$k, _descriptor5$i, _descriptor6$f, _descriptor7$d, _descriptor8$b, _descriptor9$a;
 
   function _initDefineProp$s(target, property, descriptor, context) {
       if (!descriptor) return;
@@ -36372,7 +36340,7 @@ var Bundle = (function (exports) {
               args[_key] = arguments[_key];
           }
 
-          return _ret = (_temp = (_this = possibleConstructorReturn(this, (_ref = GlobalStyleSheet.__proto__ || Object.getPrototypeOf(GlobalStyleSheet)).call.apply(_ref, [this].concat(args))), _this), _initDefineProp$s(_this, "body", _descriptor$r, _this), _initDefineProp$s(_this, "hidden", _descriptor2$p, _this), _initDefineProp$s(_this, "everything", _descriptor3$n, _this), _initDefineProp$s(_this, "a", _descriptor4$l, _this), _initDefineProp$s(_this, "hr", _descriptor5$j, _this), _initDefineProp$s(_this, "codeAndPre", _descriptor6$g, _this), _initDefineProp$s(_this, "code", _descriptor7$e, _this), _initDefineProp$s(_this, "pre", _descriptor8$a, _this), _initDefineProp$s(_this, "preInCode", _descriptor9$9, _this), _temp), possibleConstructorReturn(_this, _ret);
+          return _ret = (_temp = (_this = possibleConstructorReturn(this, (_ref = GlobalStyleSheet.__proto__ || Object.getPrototypeOf(GlobalStyleSheet)).call.apply(_ref, [this].concat(args))), _this), _initDefineProp$s(_this, "body", _descriptor$r, _this), _initDefineProp$s(_this, "hidden", _descriptor2$p, _this), _initDefineProp$s(_this, "everything", _descriptor3$n, _this), _initDefineProp$s(_this, "a", _descriptor4$k, _this), _initDefineProp$s(_this, "hr", _descriptor5$i, _this), _initDefineProp$s(_this, "codeAndPre", _descriptor6$f, _this), _initDefineProp$s(_this, "code", _descriptor7$d, _this), _initDefineProp$s(_this, "pre", _descriptor8$b, _this), _initDefineProp$s(_this, "preInCode", _descriptor9$a, _this), _temp), possibleConstructorReturn(_this, _ret);
       }
 
       return GlobalStyleSheet;
@@ -36399,7 +36367,7 @@ var Bundle = (function (exports) {
               boxSizing: "border-box"
           };
       }
-  }), _descriptor4$l = _applyDecoratedDescriptor$s(_class$11.prototype, "a", [_dec4$2], {
+  }), _descriptor4$k = _applyDecoratedDescriptor$s(_class$11.prototype, "a", [_dec4$2], {
       enumerable: true,
       initializer: function initializer() {
           return {
@@ -36407,7 +36375,7 @@ var Bundle = (function (exports) {
               color: this.themeProperties.COLOR_LINK
           };
       }
-  }), _descriptor5$j = _applyDecoratedDescriptor$s(_class$11.prototype, "hr", [_dec5$1], {
+  }), _descriptor5$i = _applyDecoratedDescriptor$s(_class$11.prototype, "hr", [_dec5$1], {
       enumerable: true,
       initializer: function initializer() {
           return {
@@ -36419,14 +36387,14 @@ var Bundle = (function (exports) {
               boxSizing: "content-box"
           };
       }
-  }), _descriptor6$g = _applyDecoratedDescriptor$s(_class$11.prototype, "codeAndPre", [_dec6$1], {
+  }), _descriptor6$f = _applyDecoratedDescriptor$s(_class$11.prototype, "codeAndPre", [_dec6$1], {
       enumerable: true,
       initializer: function initializer() {
           return {
               fontFamily: this.themeProperties.FONT_FAMILY_MONOSPACE
           };
       }
-  }), _descriptor7$e = _applyDecoratedDescriptor$s(_class$11.prototype, "code", [_dec7$1], {
+  }), _descriptor7$d = _applyDecoratedDescriptor$s(_class$11.prototype, "code", [_dec7$1], {
       enumerable: true,
       initializer: function initializer() {
           return {
@@ -36437,7 +36405,7 @@ var Bundle = (function (exports) {
               borderRadius: this.themeProperties.BUTTON_BORDER_RADIUS
           };
       }
-  }), _descriptor8$a = _applyDecoratedDescriptor$s(_class$11.prototype, "pre", [_dec8], {
+  }), _descriptor8$b = _applyDecoratedDescriptor$s(_class$11.prototype, "pre", [_dec8], {
       enumerable: true,
       initializer: function initializer() {
           return {
@@ -36454,7 +36422,7 @@ var Bundle = (function (exports) {
               border: "1px solid #ccc"
           };
       }
-  }), _descriptor9$9 = _applyDecoratedDescriptor$s(_class$11.prototype, "preInCode", [_dec9], {
+  }), _descriptor9$a = _applyDecoratedDescriptor$s(_class$11.prototype, "preInCode", [_dec9], {
       enumerable: true,
       initializer: function initializer() {
           return {

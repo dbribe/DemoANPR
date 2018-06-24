@@ -1,16 +1,20 @@
-import {UI, Link, registerStyle} from "UI";
+import {UI, Link, Image, Button, registerStyle, keyframesRule} from "UI";
 import {StyleSheet, styleRule} from "UI";
-import {TextTranslationList} from "translation/TextTranslationList";
+import {UploadFilesCuJapca} from "./Storage";
 
 
 class CardStyle extends StyleSheet {
     @styleRule
     container = {
-        width: "450px",
+        width: "80vw",
+        marginTop: "-10px",
+        height: "calc(100vh - 140px)",
         maxHeight: "100%",
         maxWidth: "100%",
         backgroundColor: "#fff",
-        boxShadow: "#a05100 0px 0px 10px",
+        boxShadow: "rgba(0,0,0,.23) 0px 0px 10px",
+        borderRadius: "20px",
+        textAlign: "center",
     };
 
     @styleRule
@@ -36,16 +40,6 @@ class CardStyle extends StyleSheet {
     };
 }
 
-class QuoteStyle extends StyleSheet {
-    @styleRule
-    quote = {
-        color: "#aaa",
-        fontStyle: "italic",
-        fontSize: "17px",
-        marginTop: "10px",
-    };
-}
-
 class IndexPageStyle extends StyleSheet {
     @styleRule
     container = {
@@ -58,16 +52,6 @@ class IndexPageStyle extends StyleSheet {
     };
 
     @styleRule
-    topContainer = {
-        flexGrow: "1.5",
-        width: "100%",
-        backgroundColor: "#f0a150",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-    };
-
-    @styleRule
     bottomContainer = {
         flexGrow: "2",
         width: "100%",
@@ -75,6 +59,71 @@ class IndexPageStyle extends StyleSheet {
         paddingTop: "20px",
         textAlign: "center",
     };
+
+    @styleRule
+    imageContainer = {
+        position: "relative",
+        margin: "18px 22px",
+        height: "calc(100% - 92px)",
+        textAlign: "center",
+    };
+
+    @styleRule
+    image = {
+        maxHeight: "100%",
+        maxWidth: "100%",
+        width: "unset",
+        position: "relative",
+        borderRadius: "8px",
+        border: "2px solid #5725aa"
+    };
+
+    @styleRule
+    boxContainer = {
+        height: "-webkit-fill-available",
+        width: "fit-content",
+        margin: "0 auto",
+        maxHeight: "fit-content",
+        position: "relative",
+        top: "50%",
+        transform: "translateY(-50%)",
+    };
+
+    @keyframesRule
+    spin = {
+        "0%": {
+            transform: "rotate(0deg)",
+        },
+        "100%": {
+            transform: "rotate(360deg)",
+        }
+    };
+
+    @styleRule
+    loader = {
+        border: "7px solid #00ff66",
+        borderTop: "7px solid #00000000",
+        borderRadius: "50%",
+        width: "50px",
+        height: "50px",
+        animation: "" + this.spin + " .7s linear infinite",
+    };
+
+    @styleRule
+    loaderContainer = {
+        display: "none",
+        position: "absolute",
+        background: "#000",
+        opacity: "0",
+        borderRadius: "100%",
+        padding: "10px",
+        zIndex: "2",
+        margin: "0 auto",
+        left: "50%",
+        transform: "translate(-50%, -50%)",
+        top: "50%",
+        transition: "opacity ease 1s",
+    }
 }
 
 
@@ -83,39 +132,8 @@ export class Card extends UI.Element {
     extraNodeAttributes(attr) {
         attr.addClass(this.styleSheet.container);
     }
-
-    render() {
-        let {headerText, bodyText} = this.options;
-
-        return [
-            <div className={this.styleSheet.header}>
-                {headerText}
-            </div>,
-            <div className={this.styleSheet.body}>
-                {
-                    bodyText.map((line) => {
-                        return <p>{line}</p>;
-                    })
-                }
-            </div>
-        ];
-    }
 }
 
-@registerStyle(QuoteStyle)
-class Quote extends UI.Element {
-    render() {
-        let {text, hasQuotes} = this.options,
-            message = text;
-        if (hasQuotes) {
-            message = "\"" + message + "\"";
-        }
-
-        return <div className={this.styleSheet.quote}>
-            {message}
-        </div>;
-    }
-}
 
 @registerStyle(IndexPageStyle)
 export class IndexPage extends UI.Element {
@@ -124,8 +142,87 @@ export class IndexPage extends UI.Element {
     }
 
     render() {
+        const {styleSheet} = this;
+
         return [
-            <TextTranslationList style={{height: "100%"}}/>
+            <Card>
+                <div className={styleSheet.imageContainer}>
+                    <div ref="loaderContainer" className={styleSheet.loaderContainer}>
+                        <div className={styleSheet.loader}/>
+                    </div>
+                    <div className={styleSheet.boxContainer} ref="boxContainer">
+                        <Image ref="img" className={styleSheet.image} src="static/ANPR_placeholder.png" />
+                    </div>
+                </div>
+                <UploadFilesCuJapca ref="uploader"/>
+            </Card>
         ];
+    }
+
+    onMount() {
+        this.uploader.addListener("sourceUpdate", path => {
+            this.img.setAttribute("src", path);
+            this.boxContainer.updateOptions({
+                children: [this.img]
+            });
+            this.loaderContainer.setStyle("display", "block");
+            setTimeout(() => {
+                this.loaderContainer.setStyle("opacity", ".7");
+            }, 1500);
+        });
+        this.uploader.addListener("received", event => {
+            this.loaderContainer.setStyle("display", "none");
+            this.loaderContainer.setStyle("opacity", "0");
+            for (const match of event.response) {
+                this.boxContainer.appendChild(<BoundingBox data={match}/>)
+            }
+        })
+    }
+}
+
+
+class BoundingBoxStyle extends StyleSheet {
+    @styleRule
+    boundingBox = {
+        border: "2px solid springgreen",
+        position: "absolute",
+        fontColor: "springgreen",
+        fontSize: "17px",
+        color: "springgreen",
+    };
+
+    @styleRule
+    label = {
+        position: "absolute",
+        bottom: "-26px",
+        padding: "2px",
+        background: "rgba(0,0,0,.3)",
+        margin: "0 auto",
+        transform: "translateX(-50%)",
+        left: "50%",
+        whiteSpace: "nowrap",
+    };
+}
+
+
+@registerStyle(BoundingBoxStyle)
+class BoundingBox extends UI.Element {
+    extraNodeAttributes(attr) {
+        super.extraNodeAttributes(attr);
+        attr.addClass(this.styleSheet.boundingBox);
+        const left = this.options.data.boundingBox[0];
+        const top = this.options.data.boundingBox[1];
+        const width = this.options.data.boundingBox[2] - left;
+        const height = this.options.data.boundingBox[3] - top;
+        attr.setStyle({
+            left: left * 100 + "%",
+            top: top * 100 + "%",
+            width: width * 100 + "%",
+            height: height * 100 + "%",
+        })
+    }
+
+    render() {
+        return <div className={this.styleSheet.label}>{this.options.data.label}</div>
     }
 }
