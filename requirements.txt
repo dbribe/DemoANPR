@@ -21,3 +21,4 @@ tqdm
 
 tensorflow
 keras
+scikit-image

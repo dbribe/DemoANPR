@@ -3,14 +3,14 @@ DEBUG = True
 ALLOWED_HOSTS = ["*"]
 
 DATABASES = {
-   'default': {
-       'ENGINE': 'django.db.backends.postgresql',
-       'NAME': 'translify',
-       'USER': 'postgres',
-       'PASSWORD': 'new_password',
-       'HOST': '127.0.0.1',
-       'PORT': '5432',
-   },
+   # 'default': {
+   #     'ENGINE': 'django.db.backends.postgresql',
+   #     'NAME': 'translify',
+   #     'USER': 'postgres',
+   #     'PASSWORD': 'new_password',
+   #     'HOST': '127.0.0.1',
+   #     'PORT': '5432',
+   # },
 }
 
 REDIS_CONNECTION = {
