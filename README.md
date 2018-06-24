@@ -22,7 +22,7 @@ Then, install the **Python3** requirements:
 If some of the requirements aren't installed, don't worry. Just install each of them manually and you are good to go.
 
 Next, you should start a Postgres database server and configure it. By default, Establishment needs a database server.
-After you create a database, just add it in the #settings.py# directory.
+After you create a database, just add it in the **settings.py** directory.
 
 ## Run
 
