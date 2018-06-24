@@ -74,7 +74,7 @@ class AppNavManager extends NavManager {
     getRightFixed() {
         return [
             <NavSection anchor={Direction.RIGHT} style={{margin: 0}}>
-                <NavLinkElement href="https://github.com/dbribe/translify" newTab className={this.styleSheet.contribute} value="contribute on Github" />
+                <NavLinkElement href="https://github.com/dbribe/DemoANPR" newTab className={this.styleSheet.contribute} value="contribute on Github" />
             </NavSection>
         ];
     }

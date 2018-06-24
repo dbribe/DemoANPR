@@ -35660,7 +35660,7 @@ var Bundle = (function (exports) {
               return [UI.createElement(
                   NavSection,
                   { anchor: Direction.RIGHT, style: { margin: 0 } },
-                  UI.createElement(NavLinkElement, { href: "https://github.com/dbribe/translify", newTab: true, className: this.styleSheet.contribute, value: "contribute on Github" })
+                  UI.createElement(NavLinkElement, { href: "https://github.com/dbribe/DemoANPR", newTab: true, className: this.styleSheet.contribute, value: "contribute on Github" })
               )];
           }
       }]);

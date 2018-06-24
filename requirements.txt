@@ -21,3 +21,6 @@ tqdm
 
 pytesseract
 googletrans
+
+tensorflow
+keras
