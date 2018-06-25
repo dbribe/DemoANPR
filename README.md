@@ -17,7 +17,7 @@ First, run **install.sh** to install **pip3** and other required libraries (you 
 
 Then, install the **Python3** requirements:
 
-```pip3 install requirements.txt```
+```pip3 install -r requirements.txt```
 
 If some of the requirements aren't installed, don't worry. Just install each of them manually and you are good to go.
 
