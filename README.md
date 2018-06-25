@@ -1,5 +1,7 @@
 # DemoANPR
 
+You can find the live demo at [anpr.dbribe.com](http://anpr.dbribe.com)
+
 ## Installation
 
 **Warning**
@@ -23,6 +25,8 @@ If some of the requirements aren't installed, don't worry. Just install each of 
 
 Next, you should start a Postgres database server and configure it. By default, Establishment needs a database server.
 After you create a database, just add it in the **settings.py** directory.
+
+Also, you should install and run **redis**.
 
 ## Run
 
